@@ -16,5 +16,17 @@ namespace MueblesCormar.Views
         {
             InitializeComponent();
         }
+
+        private void CmdMostrarContraseña(object sender, ToggledEventArgs e)
+        {
+            if (SwMostrarContraseña.IsToggled)
+            {
+                TxtContraseña.IsPassword = false;
+            }
+            else
+            {
+                TxtContraseña.IsPassword = true;
+            }
+        }
     }
 }
