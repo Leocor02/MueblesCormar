@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MueblesCormar.Views.UserSignUpPage">
+             x:Class="MueblesCormar.Views.UserSignUpPage"
+             Shell.NavBarIsVisible="false"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
     <ContentPage.Content>
         <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
 
             <Label Padding="0,20,0,10" Text="Crear un usuario" TextColor="#282424" FontSize="Large" HorizontalOptions="Center"/>
 
             <Entry x:Name="TxtNombre" Placeholder="Nombre"/>
-            <Entry x:Name="TxtEmail" Placeholder="Email"/>
-            <Entry x:Name="TxtContraseña" Placeholder="Contraseña"/>
-            <Entry x:Name="TxtTelefono" Placeholder="Teléfono"/>
+            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
+            <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True"/>
+            <Entry x:Name="TxtTelefono" Placeholder="Teléfono" Keyboard="Numeric"/>
 
             <Button x:Name="BtnRegistrar" Text="Registrarse"/>
             <Button x:Name="BtnCancelar" Text="Cancelar" Clicked="BtnCancelar_Clicked"/>
