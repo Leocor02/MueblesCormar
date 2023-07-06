@@ -15,8 +15,9 @@
             <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True"/>
             <Entry x:Name="TxtTelefono" Placeholder="Teléfono" Keyboard="Numeric"/>
 
-            <Button x:Name="BtnRegistrar" Text="Registrarse"/>
-            <Button x:Name="BtnCancelar" Text="Cancelar" Clicked="BtnCancelar_Clicked"/>
+
+            <Button x:Name="BtnRegistrar" Text="Registrarse" Margin="0,5,0,5" FontSize="17" CornerRadius="20"/>
+            <Button x:Name="BtnCancelar" Text="Cancelar" FontSize="17" CornerRadius="20" Clicked="BtnCancelar_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>
