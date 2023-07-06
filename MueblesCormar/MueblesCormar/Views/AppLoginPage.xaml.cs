@@ -28,5 +28,10 @@ namespace MueblesCormar.Views
                 TxtContraseña.IsPassword = true;
             }
         }
+
+        private async void BtnRegistrarse_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserSignUpPage());
+        }
     }
 }
