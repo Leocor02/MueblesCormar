@@ -74,7 +74,31 @@ namespace MueblesCormar.ViewModels
                 IsBusy = false;
             }
 
+        }
 
+        //función de validación de ingreso del usuario al app
+        public async Task<bool> AccesoValidacionUsuario(string pEmail, string pContraseña)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                MyUsuario.Email = pEmail;
+                MyUsuario.Contraseña = pContraseña;
+
+                bool R = await MyUsuario.ValidarLogin();
+
+                return R;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally 
+            { IsBusy = false; }
+                
             
         }
     }

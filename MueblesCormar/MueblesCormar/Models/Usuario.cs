@@ -73,6 +73,43 @@ namespace MueblesCormar.Models
             }
         }
 
+        public async Task<bool> ValidarLogin()
+        {
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/ValidarLogin?NombreUsuario={0}&ContraseniaUsuario={1}", 
+                                                  this.Email, this.Contraseña);
+
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //Agregar la info de seguridad del api, en este caso apikey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+        }
+
 
 
     }

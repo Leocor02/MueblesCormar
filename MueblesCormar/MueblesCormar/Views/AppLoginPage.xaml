@@ -20,7 +20,7 @@
                 
             </StackLayout>
 
-            <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#1F4893" Margin="0,0,0,5"/>
+            <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#1F4893" Margin="0,0,0,5" Clicked="BtnIniciarSesion_Clicked"/>
             <Button x:Name="BtnRegistrarse" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#1F4893" Clicked="BtnRegistrarse_Clicked"/>
 
         </StackLayout>
