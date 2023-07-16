@@ -46,10 +46,10 @@ namespace MueblesCormar.Views
             if (TxtNombreUsuario != null &&!string.IsNullOrEmpty(TxtNombreUsuario.Text.Trim()) &&
                 TxtContraseña != null && !string.IsNullOrEmpty(TxtContraseña.Text.Trim()))
             {
-                string u = TxtNombreUsuario.Text.Trim();
-                string c = TxtContraseña.Text.Trim();
+                string usuario = TxtNombreUsuario.Text.Trim();
+                string contraseña = TxtContraseña.Text.Trim();
 
-                R = await vm.AccesoValidacionUsuario(u, c);
+                R = await vm.AccesoValidacionUsuario(usuario, contraseña);
             }
             else
             {
@@ -59,7 +59,9 @@ namespace MueblesCormar.Views
 
             if (R)
             {
-                await DisplayAlert(":)", "Usuario OK", "OK");
+                //await DisplayAlert(":)", "Usuario correcto", "OK");
+
+                await Navigation.PushAsync(new AdminHomePage());
                 //Mostrar la página de selección de acciones en el sistema
             }
             else
