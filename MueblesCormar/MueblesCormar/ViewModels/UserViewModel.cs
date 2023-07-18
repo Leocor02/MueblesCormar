@@ -47,7 +47,7 @@ namespace MueblesCormar.ViewModels
                                                     string pEmail,
                                                     string pContraseña,
                                                     string pTelefono,
-                                                    int pRolUsuario = 2) //Usuario empleado
+                                                    int rolID)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -58,7 +58,7 @@ namespace MueblesCormar.ViewModels
                 MyUsuario.Email = pEmail;
                 MyUsuario.Contraseña = pContraseña;
                 MyUsuario.Telefono = pTelefono;
-                MyUsuario.IdrolUsuario = pRolUsuario;
+                MyUsuario.IdrolUsuario = rolID;
 
                 bool R = await MyUsuario.AgregarUsurio();
 
