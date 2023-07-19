@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using MueblesCormar.Models;
+using MueblesCormar.Models.DTOs;
 
 namespace MueblesCormar.ViewModels
 {
     public class UserViewModel : BaseViewModel
     {
-        public RolUsuario MyRolUsuario { get; set; }
-        public Usuario MyUsuario { get; set; }
+        public RolUsuario MiRolUsuario { get; set; }
+        public Usuario MiUsuario { get; set; }
+        public UsuarioDTO MiUsuarioDTO { get; set; }
 
         public UserViewModel()
         {
-            MyRolUsuario = new RolUsuario();
-            MyUsuario = new Usuario();
+            MiRolUsuario = new RolUsuario();
+            MiUsuario = new Usuario();
+            MiUsuarioDTO = new UsuarioDTO();
         }
 
         public async Task<List<RolUsuario>> GetRolUsuarioLista()
@@ -23,7 +26,7 @@ namespace MueblesCormar.ViewModels
             {
                 List<RolUsuario> list = new List<RolUsuario>();
 
-                list = await MyRolUsuario.GetRolesUsurios();
+                list = await MiRolUsuario.GetRolesUsurios();
 
                 if (list == null)
                 {
@@ -54,13 +57,13 @@ namespace MueblesCormar.ViewModels
 
             try
             {
-                MyUsuario.Nombre = pName;
-                MyUsuario.Email = pEmail;
-                MyUsuario.Contraseña = pContraseña;
-                MyUsuario.Telefono = pTelefono;
-                MyUsuario.IdrolUsuario = rolID;
+                MiUsuario.Nombre = pName;
+                MiUsuario.Email = pEmail;
+                MiUsuario.Contraseña = pContraseña;
+                MiUsuario.Telefono = pTelefono;
+                MiUsuario.IdrolUsuario = rolID;
 
-                bool R = await MyUsuario.AgregarUsurio();
+                bool R = await MiUsuario.AgregarUsuario();
 
                 return R;
             }
@@ -84,10 +87,10 @@ namespace MueblesCormar.ViewModels
 
             try
             {
-                MyUsuario.Email = pEmail;
-                MyUsuario.Contraseña = pContraseña;
+                MiUsuario.Email = pEmail;
+                MiUsuario.Contraseña = pContraseña;
 
-                bool R = await MyUsuario.ValidarLogin();
+                bool R = await MiUsuario.ValidarLogin();
 
                 return R;
             }
@@ -100,6 +103,39 @@ namespace MueblesCormar.ViewModels
             { IsBusy = false; }
                 
             
+        }
+
+        //función para actualizar usuario
+        public async Task<bool> ActualizarUsuario(string pName,
+                                                   string pEmail,
+                                                   string pContraseña,
+                                                   string pTelefono)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                MiUsuarioDTO.Nombre = pName;
+                MiUsuarioDTO.Email = pEmail;
+                MiUsuarioDTO.Contrasennia = pContraseña;
+                MiUsuarioDTO.Telefono = pTelefono;
+          
+
+                bool R = await MiUsuarioDTO.ActualizarUsuario();
+
+                return R;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
         }
     }
 }

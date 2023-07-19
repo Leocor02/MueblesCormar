@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MueblesCormar.Views.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,21 @@ namespace MueblesCormar.Views
         public AdminHomePage()
         {
             InitializeComponent();
+        }
+
+        private async void BtnEmpleados_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EmployeeManagementPage());
+        }
+
+        private void BtnProveedores_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnInventario_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

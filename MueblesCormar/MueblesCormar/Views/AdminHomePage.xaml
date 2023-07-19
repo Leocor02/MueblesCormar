@@ -20,7 +20,9 @@
 
    
 
-                    <Button Grid.Row="0" Text="Inventario"
+                    <Button Grid.Row="0" 
+                            x:Name="BtnInventario"
+                            Text="Inventario"
                             FontSize="17" 
                             CornerRadius="5" 
                             HeightRequest="70"
@@ -28,9 +30,12 @@
                             HorizontalOptions="Center"
                             BackgroundColor="#094AC1"
                             BorderWidth="1"
-                            BorderColor="#0AADAD"/>
+                            BorderColor="#0AADAD"
+                            Clicked="BtnInventario_Clicked"/>
 
-                    <Button Grid.Row="1" Text="Proveedores"
+                    <Button Grid.Row="1" 
+                            x:Name="BtnProveedores"
+                            Text="Proveedores"
                             FontSize="17" 
                             CornerRadius="5" 
                             HeightRequest="70"
@@ -38,9 +43,12 @@
                             HorizontalOptions="Center"
                             BackgroundColor="#094AC1"
                             BorderWidth="1"
-                            BorderColor="Aqua"/>
+                            BorderColor="Aqua"
+                            Clicked="BtnProveedores_Clicked"/>
 
-                    <Button Grid.Row="2" Text="Empleados"
+                    <Button Grid.Row="2" 
+                            x:Name="BtnEmpleados"
+                            Text="Empleados"
                             FontSize="17" 
                             CornerRadius="5" 
                             HeightRequest="70"
@@ -48,9 +56,12 @@
                             HorizontalOptions="Center"
                             BackgroundColor="#094AC1"
                             BorderWidth="1"
-                            BorderColor="Aqua"/>
+                            BorderColor="Aqua"
+                            Clicked="BtnEmpleados_Clicked"/>
 
-                    <Button Grid.Row="3" Text="Bitácora"
+                    <Button Grid.Row="3" 
+                            x:Name="BtnBitacoras"
+                            Text="Bitácora"
                             FontSize="17" 
                             CornerRadius="5" 
                             HeightRequest="70"

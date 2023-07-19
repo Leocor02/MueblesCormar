@@ -64,14 +64,14 @@ namespace MueblesCormar.Views
             }
             else
             {
-                await DisplayAlert("Validación de error", "El usuario o contraseña son requeridas", "OK");
+                await DisplayAlert("Validación de error", "El usuario y la contraseña son requeridas", "OK");
                 return;
             }
 
             if (R)
             {
                 await Navigation.PushAsync(new AdminHomePage());
-                //Mostrar la página de selección de acciones en el sistema
+                //Muestra la página de selección de acciones en el sistema
             }
             else
             {
