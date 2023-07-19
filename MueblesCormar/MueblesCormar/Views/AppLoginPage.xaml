@@ -4,24 +4,24 @@
              x:Class="MueblesCormar.Views.AppLoginPage"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#464646">
+             BackgroundColor="#BECFE3">
     <ContentPage.Content>
         <StackLayout Padding="50,0,50,0" VerticalOptions="Center">
-           
-            <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#FFCFC9C9" PlaceholderColor="#5DB6FF"/>
+
+            <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#0D0101" PlaceholderColor="#080912"/>
 
             <StackLayout Orientation="Horizontal" Spacing="20" VerticalOptions="FillAndExpand" Padding="0,10,0,30">
-                <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="#FFCFC9C9" PlaceholderColor="#5DB6FF" WidthRequest="210"/>
+                <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="#0D0101" PlaceholderColor="#080912" WidthRequest="210"/>
 
                 <StackLayout>
                     <Switch x:Name="SwMostrarContraseña" IsToggled="False" Toggled="CmdMostrarContraseña"/>
-                    <Label Text="Ver Contraseña" FontSize="11" TextColor="#5DB6FF" HorizontalTextAlignment="Center"/>
+                    <Label Text="Ver Contraseña" FontSize="11" TextColor="#000000" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 
             </StackLayout>
 
-            <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#1F4893" Margin="0,0,0,5" Clicked="BtnIniciarSesion_Clicked"/>
-            <Button x:Name="BtnRegistrarse" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#1F4893" Clicked="BtnRegistrarse_Clicked"/>
+            <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#07255C" Margin="0,0,0,5" Clicked="BtnIniciarSesion_Clicked"/>
+            <Button x:Name="BtnRegistrarse" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#07255C" Clicked="BtnRegistrarse_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>

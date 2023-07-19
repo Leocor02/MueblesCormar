@@ -20,6 +20,30 @@ namespace MueblesCormar.ViewModels
             MiUsuarioDTO = new UsuarioDTO();
         }
 
+        public async Task<UsuarioDTO> GetDataUsuario(string email)
+        {
+            try
+            {
+                UsuarioDTO usuario = new UsuarioDTO();
+
+                usuario = await MiUsuarioDTO.GetDataUsuario(email);
+
+                if (usuario == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return usuario;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
         public async Task<List<RolUsuario>> GetRolUsuarioLista()
         {
             try

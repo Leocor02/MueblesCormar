@@ -70,8 +70,19 @@ namespace MueblesCormar.Views
 
             if (R)
             {
+                try
+                {
+                    //TODO: Cargar info de un objeto global de tipo usuario(o usuarioDTO)
+                    GlobalObjects.GlobalUser = await vm.GetDataUsuario(TxtNombreUsuario.Text.Trim());
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", ex.Message, "OK");
+                    return;
+                }
+               
+
                 await Navigation.PushAsync(new AdminHomePage());
-                //Muestra la página de selección de acciones en el sistema
             }
             else
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MueblesCormar.Views.Admin.Employee_Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,9 @@ namespace MueblesCormar.Views.Admin
             InitializeComponent();
         }
 
-        private void BtnModificarEmpleado_Clicked(object sender, EventArgs e)
+        private async void BtnModificarEmpleado_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new EditEmployee());
         }
 
         private void BtnVerEmpleado_Clicked(object sender, EventArgs e)

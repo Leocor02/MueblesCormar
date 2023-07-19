@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MueblesCormar.Models.DTOs
 {
-    internal class UsuarioDTO
+    public class UsuarioDTO
     {
         public RestRequest request { get; set; }
         const string mimetype = "application/json";
@@ -20,6 +20,47 @@ namespace MueblesCormar.Models.DTOs
         public string Contrasennia { get; set; } = null!;
         public string Telefono { get; set; } = null!;
         public int IdrolUsuario { get; set; }
+
+
+        public async Task<UsuarioDTO> GetDataUsuario(string email)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/GetInfoUsuario?email={0}", email);
+
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //Agregar la info de seguridad del api, en este caso apikey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    var list = JsonConvert.DeserializeObject<List<UsuarioDTO>>(response.Content);
+
+                    var item = list[0]; 
+
+                    return item;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+        }
 
 
         //función para actualizar la info de un usuario
