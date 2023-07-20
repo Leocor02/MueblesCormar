@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,6 +103,47 @@ namespace MueblesCormar.Models.DTOs
                 string msg = ex.Message;
                 throw;
             }
+        }
+
+        public async Task<ObservableCollection<UsuarioDTO>> GetListaEmpleado()
+        {
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/GetListaEmpleado");
+
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de seguridad del api, en este caso ApiKey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    var list = JsonConvert.DeserializeObject<ObservableCollection<UsuarioDTO>>(response.Content);
+
+                    return list;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                //TODO: guardar estos errores en una bitácora para su posterior analisis
+                throw;
+            }
+
         }
     }
 }

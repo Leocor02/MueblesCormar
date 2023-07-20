@@ -23,9 +23,9 @@ namespace MueblesCormar.Views.Admin
             await Navigation.PushAsync(new EditEmployee());
         }
 
-        private void BtnVerEmpleado_Clicked(object sender, EventArgs e)
+        private async void BtnVerEmpleado_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ShowEmployee());
         }
 
         private void BtnAgregarEmpleado_Clicked(object sender, EventArgs e)

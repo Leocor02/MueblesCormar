@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using MueblesCormar.Models;
@@ -127,6 +128,40 @@ namespace MueblesCormar.ViewModels
             { IsBusy = false; }
                 
             
+        }
+
+        public async Task<ObservableCollection<UsuarioDTO>> GetFullListaEmpleado()
+        {
+            if (IsBusy)
+            {
+                return null;
+            }
+            else
+            {
+                IsBusy = true;
+
+                try
+                {
+                    ObservableCollection<UsuarioDTO> list = new ObservableCollection<UsuarioDTO>();
+
+                    list = await MiUsuarioDTO.GetListaEmpleado();
+
+                    if (list == null)
+                    {
+                        return null;
+                    }
+
+                    return list;
+
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+                finally { IsBusy = false; }
+
+            }
+
         }
 
         //función para actualizar usuario
