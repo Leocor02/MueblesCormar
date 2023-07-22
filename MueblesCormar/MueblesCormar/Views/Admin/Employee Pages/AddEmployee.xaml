@@ -3,10 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MueblesCormar.Views.Admin.Employee_Pages.AddEmployee">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
+
+            <Label Padding="0,20,0,10" Text="Crear un usuario" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+
+            <Entry x:Name="TxtNombre" Placeholder="Nombre"/>
+            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
+            <Entry x:Name="TxtContrasennia" Placeholder="Contraseña" IsPassword="True"/>
+            <Entry x:Name="TxtTelefono" Placeholder="Telefono" Keyboard="Numeric"/>
+
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0"  
+                        x:Name="BtnAgregar" Text="Agregar" 
+                        FontSize="17" CornerRadius="20" 
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        BackgroundColor="#094AC1"
+                        Clicked="BtnAgregar_Clicked"/>
+
+                <Button Grid.Row="0" Grid.Column="1" 
+                        x:Name="BtnCancelar" Text="Cancelar" 
+                        FontSize="17" CornerRadius="20" 
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        BackgroundColor="#094AC1"
+                        Clicked="BtnCancelar_Clicked"/>
+
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
