@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MueblesCormar.Views.Admin.Inventory_Pages.AddInventory">
+             x:Class="MueblesCormar.Views.Admin.Porvider_Pages.AddProvider">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="TxtNombre" Placeholder="Nombre del producto"/>
-            <Entry x:Name="TxtCantidad" Placeholder="Cantidad del producto" Keyboard="Numeric"/>
-            <Entry x:Name="TxtDescripcion" Placeholder="Descripcion del producto"/>
-            <Entry x:Name="TxtProductoImagen" Placeholder="URL de la imagen"/>
-            <Entry x:Name="TxtPrecio" Placeholder="precio del producto" Keyboard="Numeric"/>
+            <Entry x:Name="TxtNombre" Placeholder="Nombre del proveedor"/>
+            <Entry x:Name="TxtDireccion" Placeholder="Dirección"/>
 
             <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
 
@@ -21,13 +18,12 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Row="0" Grid.Column="0"
-                        x:Name="BtnAgregar" Text="Agregar"
+                        x:Name="BtnAgregar" Text="Agregar" 
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
                         BackgroundColor="#094AC1"
                         Clicked="BtnAgregar_Clicked"/>
-
 
                 <Button Grid.Row="0" Grid.Column="1" 
                         x:Name="BtnCancelar" Text="Cancelar" 
@@ -38,6 +34,7 @@
                         Clicked="BtnCancelar_Clicked"/>
 
             </Grid>
+
             
         </StackLayout>
     </ContentPage.Content>

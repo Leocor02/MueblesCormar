@@ -23,9 +23,9 @@ namespace MueblesCormar.Views
             await Navigation.PushAsync(new EmployeeManagementPage());
         }
 
-        private void BtnProveedores_Clicked(object sender, EventArgs e)
+        private async void BtnProveedores_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ProviderManagementPage());
         }
 
         private async void BtnInventario_Clicked(object sender, EventArgs e)

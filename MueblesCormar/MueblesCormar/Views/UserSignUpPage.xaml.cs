@@ -94,12 +94,12 @@ namespace MueblesCormar.Views
                                                             rolID);
                     if (R)
                     {
-                        await DisplayAlert(":)", "Usuario agregado", "OK");
+                        await DisplayAlert("ÉXITO", "Usuario agregado", "OK");
                         await Navigation.PopAsync();
                     }
                     else
                     {
-                        await DisplayAlert(":(", "Algo salió mal", "OK");
+                        await DisplayAlert("ERROR", "Algo salió mal", "OK");
                     }
                 }
             }

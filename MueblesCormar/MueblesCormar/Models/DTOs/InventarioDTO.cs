@@ -2,23 +2,18 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MueblesCormar.Models
+namespace MueblesCormar.Models.DTOs
 {
-    public class Inventario
+    public class InventarioDTO
     {
         public RestRequest request { get; set; }
         const string mimetype = "application/json";
         const string contentType = "Content-Type";
-
-        public Inventario()
-        {
-            //DetalleRegistros = new HashSet<DetalleRegistro>();
-            //ProveedorInventarios = new HashSet<ProveedorInventario>();
-        }
 
         public int Idproducto { get; set; }
         public string Nombre { get; set; } = null!;
@@ -27,40 +22,35 @@ namespace MueblesCormar.Models
         public string ImagenProducto { get; set; } = null!;
         public decimal PrecioUnidad { get; set; }
 
-        //public virtual ICollection<DetalleRegistro> DetalleRegistros { get; set; }
-        //public virtual ICollection<ProveedorInventario> ProveedorInventarios { get; set; }
-
-        public async Task<bool> AgregarProducto()
+        public async Task<ObservableCollection<InventarioDTO>> GetListaInventario()
         {
             try
             {
-                string RouteSufix = string.Format("Inventarios");
+                string RouteSufix = string.Format("Inventarios/GetListaProducto");
+
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);
 
-                request = new RestRequest(FinalURL, Method.Post);
+                request = new RestRequest(FinalURL, Method.Get);
 
                 //Agregar la info de seguridad del api, en este caso apikey
                 request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
                 request.AddHeader(contentType, mimetype);
 
-                //tenemos que serializar la clase para poderla enviar al api
-                string SerialClass = JsonConvert.SerializeObject(this);
-
-                request.AddBody(SerialClass, mimetype);
-
                 RestResponse response = await client.ExecuteAsync(request);
 
                 HttpStatusCode statusCode = response.StatusCode;
 
-                if (statusCode == HttpStatusCode.Created)
+                if (statusCode == HttpStatusCode.OK)
                 {
-                    return true;
+                    var list = JsonConvert.DeserializeObject<ObservableCollection<InventarioDTO>>(response.Content);
+
+                    return list;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             catch (Exception ex)

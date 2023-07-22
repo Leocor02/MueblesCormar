@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MueblesCormar.Views.Admin.Employee_Pages
+namespace MueblesCormar.Views.Admin.Porvider_Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddEmployee : ContentPage
+    public partial class AddProvider : ContentPage
     {
-        UserViewModel viewmodel;
-        public AddEmployee()
+        ProviderViewModel viewModel;
+        public AddProvider()
         {
             InitializeComponent();
         }
@@ -22,36 +22,29 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
             if (TxtNombre.Text == null || string.IsNullOrEmpty(TxtNombre.Text.Trim()) ||
-                TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
-                TxtContrasennia.Text == null || string.IsNullOrEmpty(TxtContrasennia.Text.Trim()) ||
-                TxtTelefono.Text == null || string.IsNullOrEmpty(TxtTelefono.Text.Trim()))
+                TxtDireccion.Text == null || string.IsNullOrEmpty(TxtDireccion.Text.Trim()))
             {
 
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "Ok");
                 return;
-
             }
 
+            //confirmación de la acción a realizar
             var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
 
             if (answer)
             {
-                int rolID = 2;//id rol empleado
-
-                bool R = await viewmodel.AgregarNuevoUsuario(TxtNombre.Text.Trim(),
-                                                     TxtEmail.Text.Trim(),
-                                                     TxtContrasennia.Text.Trim(),
-                                                     TxtTelefono.Text.Trim(),
-                                                     rolID);
+                bool R = await viewModel.AgregarNuevoProveedor(TxtNombre.Text.Trim(), TxtDireccion.Text.Trim());
+                                                             
 
                 if (R)
                 {
-                    await DisplayAlert("Exito!", "Empleado Agregado Correctamente", "Ok");
+                    await DisplayAlert("ÉXITO", "Porveedor agregado", "OK");
                     await Navigation.PopAsync();
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Hubo Un Error Al Intentar Agregar El Empleado", "Ok");
+                    await DisplayAlert("ERROR", "Algo salió mal", "OK");
                 }
             }
         }

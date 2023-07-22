@@ -14,7 +14,7 @@
                 TextColor="#282424"/>
 
 
-                <ListView x:Name="lstEmpleado" RowHeight="100">
+                <ListView x:Name="LstEmpleado" RowHeight="100">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>

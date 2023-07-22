@@ -8,33 +8,28 @@ using System.Threading.Tasks;
 
 namespace MueblesCormar.Models
 {
-    public class Inventario
+    public class Proveedor
     {
         public RestRequest request { get; set; }
         const string mimetype = "application/json";
         const string contentType = "Content-Type";
-
-        public Inventario()
+        public Proveedor()
         {
-            //DetalleRegistros = new HashSet<DetalleRegistro>();
             //ProveedorInventarios = new HashSet<ProveedorInventario>();
         }
 
-        public int Idproducto { get; set; }
+        public int Idproveedor { get; set; }
         public string Nombre { get; set; } = null!;
-        public int Cantidad { get; set; }
-        public string Descripcion { get; set; } = null!;
-        public string ImagenProducto { get; set; } = null!;
-        public decimal PrecioUnidad { get; set; }
+        public string Direccion { get; set; } = null!;
 
-        //public virtual ICollection<DetalleRegistro> DetalleRegistros { get; set; }
         //public virtual ICollection<ProveedorInventario> ProveedorInventarios { get; set; }
 
-        public async Task<bool> AgregarProducto()
+        //función para agregar un usuario a la base de datos
+        public async Task<bool> AgregarProvedor()
         {
             try
             {
-                string RouteSufix = string.Format("Inventarios");
+                string RouteSufix = string.Format("Proveedors");
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);

@@ -18,9 +18,9 @@ namespace MueblesCormar.Views.Admin
             InitializeComponent();
         }
 
-        private void BtnVerInventario_Clicked(object sender, EventArgs e)
+        private async void BtnVerInventario_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ShowInventory());
         }
 
         private async void BtnAgregarInventario_Clicked(object sender, EventArgs e)

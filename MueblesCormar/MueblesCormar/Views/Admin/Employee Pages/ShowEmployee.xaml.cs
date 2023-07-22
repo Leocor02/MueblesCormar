@@ -27,7 +27,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
 
         private async void CargaListaEmpleado()
         {
-            lstEmpleado.ItemsSource = await vm.GetFullListaEmpleado();
+            LstEmpleado.ItemsSource = await vm.GetFullListaEmpleado();
         }
 
 
