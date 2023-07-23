@@ -104,6 +104,29 @@ namespace MueblesCormar.ViewModels
 
         }
 
+        //Función para eliminar un empleado
+        public async Task<bool> DeleteEmpleado(int idUsuario)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                bool R = await MiUsuarioDTO.DeleteEmpleado(idUsuario);
+
+                return R;
+
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
+
+        }
+
         //función de validación de ingreso del usuario al app
         public async Task<bool> AccesoValidacionUsuario(string pEmail, string pContraseña)
         {
@@ -128,6 +151,31 @@ namespace MueblesCormar.ViewModels
             { IsBusy = false; }
                 
             
+        }
+
+        public async Task<UsuarioDTO> GetDataEmpleado(int idUsuario)
+        {
+            try
+            {
+                UsuarioDTO empleado = new UsuarioDTO();
+
+                empleado = await MiUsuarioDTO.GetDataEmpleado(idUsuario);
+
+                if (empleado == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return empleado;
+                }
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
         }
 
         public async Task<ObservableCollection<UsuarioDTO>> GetFullListaEmpleado()
@@ -165,23 +213,23 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para actualizar usuario
-        public async Task<bool> ActualizarUsuario(string pName,
-                                                   string pEmail,
-                                                   string pContraseña,
-                                                   string pTelefono)
+        public async Task<bool> ActualizarUsuario(int idUsuario,
+                                                  string pName,
+                                                  string pEmail,
+                                                  string pTelefono)
         {
             if (IsBusy) return false;
             IsBusy = true;
 
             try
             {
+                MiUsuarioDTO.Idusuario = idUsuario;
                 MiUsuarioDTO.Nombre = pName;
                 MiUsuarioDTO.Email = pEmail;
-                MiUsuarioDTO.Contrasennia = pContraseña;
                 MiUsuarioDTO.Telefono = pTelefono;
           
 
-                bool R = await MiUsuarioDTO.ActualizarUsuario();
+                bool R = await MiUsuarioDTO.ActualizarUsuario(idUsuario);
 
                 return R;
             }

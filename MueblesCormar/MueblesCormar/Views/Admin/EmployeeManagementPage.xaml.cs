@@ -20,7 +20,7 @@ namespace MueblesCormar.Views.Admin
 
         private async void BtnModificarEmpleado_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EditEmployee());
+            await Navigation.PushAsync(new ShowEmployee());
         }
 
         private async void BtnVerEmpleado_Clicked(object sender, EventArgs e)

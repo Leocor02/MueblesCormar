@@ -65,11 +65,11 @@ namespace MueblesCormar.Models.DTOs
 
 
         //función para actualizar la info de un usuario
-        public async Task<bool> ActualizarUsuario()
+        public async Task<bool> ActualizarUsuario(int idUsuario)
         {
             try
             {
-                string RouteSufix = string.Format("TODO");
+                string RouteSufix = string.Format("Usuarios/{0}", idUsuario);
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);
@@ -89,7 +89,7 @@ namespace MueblesCormar.Models.DTOs
 
                 HttpStatusCode statusCode = response.StatusCode;
 
-                if (statusCode == HttpStatusCode.OK)
+                if (statusCode == HttpStatusCode.NoContent)
                 {
                     return true;
                 }
@@ -101,6 +101,49 @@ namespace MueblesCormar.Models.DTOs
             catch (Exception ex)
             {
                 string msg = ex.Message;
+                throw;
+            }
+        }
+
+        public async Task<UsuarioDTO> GetDataEmpleado(int idUser)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/GetDataEmpleado?idUsuario={0}", idUser);
+                
+
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de seguridad del api, en este caso ApiKey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    var list = JsonConvert.DeserializeObject<List<UsuarioDTO>>(response.Content);
+
+                    var item = list[0];
+
+                    return item;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                //TODO: guardar estos errores en una bitácora para su posterior analisis
                 throw;
             }
         }
@@ -143,7 +186,43 @@ namespace MueblesCormar.Models.DTOs
                 //TODO: guardar estos errores en una bitácora para su posterior analisis
                 throw;
             }
-
         }
+
+        //Función para eliminar un empleado
+        public async Task<bool> DeleteEmpleado(int idUsuario)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/{0}", idUsuario);
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Delete);
+
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.NoContent)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+        }
+
+
     }
 }
