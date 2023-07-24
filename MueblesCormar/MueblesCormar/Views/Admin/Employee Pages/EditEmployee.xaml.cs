@@ -21,12 +21,10 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
         public EditEmployee(int idUsuario)
         {
             InitializeComponent();
-
             //se agrega el bindigcontext de la vista contra el viewModel
             BindingContext = viewModel = new UserViewModel();
-
             CargarDataUsuario(idUsuario);
-            this.idUsuarioVM = idUsuarioVM;
+            idUsuarioVM = idUsuario;
         }
 
         private async void CargarDataUsuario(int idUsuario)

@@ -20,12 +20,12 @@ namespace MueblesCormar.Views.Admin
 
         private async void BtnModificarEmpleado_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ShowEmployee());
+            await Navigation.PushAsync(new ShowEmployee(true, false));
         }
 
         private async void BtnVerEmpleado_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ShowEmployee());
+            await Navigation.PushAsync(new ShowEmployee(false, false));
         }
 
         private async void BtnAgregarEmpleado_Clicked(object sender, EventArgs e)
@@ -33,9 +33,9 @@ namespace MueblesCormar.Views.Admin
             await Navigation.PushAsync (new AddEmployee());
         }
 
-        private void BtnEliminarEmpleado_Clicked(object sender, EventArgs e)
+        private async void BtnEliminarEmpleado_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ShowEmployee(false, true));
         }
     }
 }

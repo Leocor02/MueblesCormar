@@ -32,10 +32,6 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
 
             }
 
-            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
-
-            if (answer)
-            {
                 int rolID = 2;//id rol empleado
 
                 bool R = await viewmodel.AgregarNuevoUsuario(TxtNombre.Text.Trim(),
@@ -53,7 +49,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 {
                     await DisplayAlert("Error", "Hubo Un Error Al Intentar Agregar El Empleado", "Ok");
                 }
-            }
+            
         }
 
         private async void BtnCancelar_Clicked(object sender, EventArgs e)

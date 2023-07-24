@@ -89,7 +89,7 @@ namespace MueblesCormar.Models.DTOs
 
                 HttpStatusCode statusCode = response.StatusCode;
 
-                if (statusCode == HttpStatusCode.NoContent)
+                if (statusCode == HttpStatusCode.OK)
                 {
                     return true;
                 }

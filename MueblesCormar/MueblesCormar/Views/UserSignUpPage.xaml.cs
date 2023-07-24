@@ -83,7 +83,7 @@ namespace MueblesCormar.Views
                 int rolID = 2;//id rol cliente
 
                 //confirmación de la acción a realizar
-                var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
+                var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este usuario?", "Si", "No");
 
                 if (answer)
                 {
