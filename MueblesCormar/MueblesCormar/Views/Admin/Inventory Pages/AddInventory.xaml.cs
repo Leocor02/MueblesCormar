@@ -17,6 +17,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
         InventoryViewModel viewModel;
         public AddInventory()
         {
+            BindingContext = viewModel = new InventoryViewModel();
             InitializeComponent();
         }
 

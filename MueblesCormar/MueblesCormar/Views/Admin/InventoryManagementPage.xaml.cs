@@ -20,7 +20,7 @@ namespace MueblesCormar.Views.Admin
 
         private async void BtnVerInventario_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ShowInventory());
+            await Navigation.PushAsync(new ShowInventory(false, false));
         }
 
         private async void BtnAgregarInventario_Clicked(object sender, EventArgs e)
@@ -28,14 +28,14 @@ namespace MueblesCormar.Views.Admin
             await Navigation.PushAsync(new AddInventory());
         }
 
-        private void BtnModificarInventario_Clicked(object sender, EventArgs e)
+        private async void BtnModificarInventario_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ShowInventory(true, false));
         }
 
-        private void BtnEliminarInventario_Clicked(object sender, EventArgs e)
+        private async void BtnEliminarInventario_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ShowInventory(false, true));
         }
     }
 }

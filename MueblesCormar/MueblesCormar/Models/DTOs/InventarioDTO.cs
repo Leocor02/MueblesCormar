@@ -22,6 +22,49 @@ namespace MueblesCormar.Models.DTOs
         public string ImagenProducto { get; set; } = null!;
         public decimal PrecioUnidad { get; set; }
 
+        public async Task<InventarioDTO> GetDataProducto(int idProducto)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Inventarios/GetDataProducto?idProducto={0}", idProducto);
+
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de seguridad del api, en este caso ApiKey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    var list = JsonConvert.DeserializeObject<List<InventarioDTO>>(response.Content);
+
+                    var item = list[0];
+
+                    return item;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                //TODO: guardar estos errores en una bitácora para su posterior analisis
+                throw;
+            }
+        }
+
+
         public async Task<ObservableCollection<InventarioDTO>> GetListaInventario()
         {
             try
@@ -59,5 +102,80 @@ namespace MueblesCormar.Models.DTOs
                 throw;
             }
         }
-    }
+        
+        public async Task<bool> ActualizarProducto(int idProducto)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Productos/{0}", idProducto);
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Put);
+
+                //Agregar la info de seguridad del api, en este caso apikey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                //tenemos que serializar la clase para poderla enviar al api
+                string SerialClass = JsonConvert.SerializeObject(this);
+
+                request.AddBody(SerialClass, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteProducto(int idProducto)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Productos/{0}", idProducto);
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Delete);
+
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.NoContent)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+
+
+        }
 }

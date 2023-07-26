@@ -20,7 +20,7 @@ namespace MueblesCormar.Views.Admin
 
         private async void BtnVerProveedor_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ShowProvider());
+            await Navigation.PushAsync(new ShowProvider(false, false));
         }
 
         private async void BtnAgregarProveedor_Clicked(object sender, EventArgs e)
@@ -28,14 +28,14 @@ namespace MueblesCormar.Views.Admin
             await Navigation.PushAsync(new AddProvider());
         }
 
-        private void BtnModificarProveedor_Clicked(object sender, EventArgs e)
+        private async void BtnModificarProveedor_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync (new ShowProvider(true, false));
         }
 
-        private void BtnEliminarProveedor_Clicked(object sender, EventArgs e)
+        private async void BtnEliminarProveedor_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ShowProvider(false, true));
         }
     }
 }

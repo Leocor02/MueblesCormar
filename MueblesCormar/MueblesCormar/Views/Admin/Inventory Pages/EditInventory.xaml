@@ -3,10 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MueblesCormar.Views.Admin.Inventory_Pages.EditInventory">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
+
+            <Label Padding="0,20,0,10" Text="Editar Proveedor" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+
+            <Entry x:Name="TxtNombre" Placeholder="Nombre"/>
+            <Entry x:Name="TxtCantidad" Placeholder="Cantidad" Keyboard="Numeric"/>
+            <Entry x:Name="TxtDescripcion" Placeholder="Descripción"/>
+            <Entry x:Name="TxtImagenProducto" Placeholder="URL de la imagen"/>
+            <Entry x:Name="TxtPrecio" Placeholder="Precio del producto" Keyboard="Numeric"/>
+
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0"  
+                        x:Name="BtnEditar" Text="Editar" 
+                        FontSize="17" CornerRadius="20" 
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        BackgroundColor="#094AC1"
+                        Clicked="BtnEditar_Clicked"/>
+
+                <Button Grid.Row="0" Grid.Column="1" 
+                        x:Name="BtnCancelar" Text="Cancelar" 
+                        FontSize="17" CornerRadius="20" 
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        BackgroundColor="#094AC1"
+                        Clicked="BtnCancelar_Clicked"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

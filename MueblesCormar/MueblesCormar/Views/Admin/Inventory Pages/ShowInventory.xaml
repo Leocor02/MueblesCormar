@@ -14,7 +14,7 @@
                 TextColor="#282424"/>
 
 
-                <ListView x:Name="LstInventario" RowHeight="100">
+                <ListView x:Name="LstInventario" RowHeight="100" ItemTapped="LstInventario_ItemTapped">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>

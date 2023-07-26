@@ -214,7 +214,7 @@ namespace MueblesCormar.ViewModels
 
         //función para actualizar usuario
         public async Task<bool> ActualizarUsuario(int idUsuario,
-                                                  string pName,
+                                                  string pNombre,
                                                   string pEmail,
                                                   string pTelefono)
         {
@@ -224,7 +224,7 @@ namespace MueblesCormar.ViewModels
             try
             {
                 MiUsuarioDTO.Idusuario = idUsuario;
-                MiUsuarioDTO.Nombre = pName;
+                MiUsuarioDTO.Nombre = pNombre;
                 MiUsuarioDTO.Email = pEmail;
                 MiUsuarioDTO.Telefono = pTelefono;
           
