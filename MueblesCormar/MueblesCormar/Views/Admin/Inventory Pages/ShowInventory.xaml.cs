@@ -61,7 +61,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 {
                     if (isDeletePage)
                     {
-                        var answer = await DisplayAlert("Confirmacion requerida!", "seguro que deseas eliminar este producto?", "Yes", "Nop");
+                        var answer = await DisplayAlert("Confirmacion requerida!", "seguro que deseas eliminar este producto?", "Si", "No");
 
                         if (answer)
                         {

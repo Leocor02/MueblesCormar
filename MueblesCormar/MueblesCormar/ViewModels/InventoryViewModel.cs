@@ -129,7 +129,7 @@ namespace MueblesCormar.ViewModels
                 {
                     ObservableCollection<InventarioDTO> list = new ObservableCollection<InventarioDTO>();
 
-                    list = await MiInventarioDTO.GetListaInventario();
+                    list = await MiInventarioDTO.GetListaProducto();
 
                     if (list == null)
                     {

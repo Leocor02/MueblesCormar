@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MueblesCormar.Views.Admin.Porvider_Pages.AddProvider">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
+
+            <Label Padding="0,20,0,10" Text="Añadir un proveedor" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+
             <Entry x:Name="TxtNombre" Placeholder="Nombre del proveedor"/>
             <Entry x:Name="TxtDireccion" Placeholder="Dirección"/>
 

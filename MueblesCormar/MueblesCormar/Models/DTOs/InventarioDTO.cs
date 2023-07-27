@@ -65,7 +65,7 @@ namespace MueblesCormar.Models.DTOs
         }
 
 
-        public async Task<ObservableCollection<InventarioDTO>> GetListaInventario()
+        public async Task<ObservableCollection<InventarioDTO>> GetListaProducto()
         {
             try
             {
@@ -175,7 +175,8 @@ namespace MueblesCormar.Models.DTOs
                 string msg = ex.Message;
                 throw;
             }
-
-
         }
+
+
+    }
 }

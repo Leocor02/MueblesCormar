@@ -22,18 +22,18 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
             InitializeComponent();
             BindingContext = viewModel = new InventoryViewModel();
             idProductoVM = idProducto;
-            CargarDataProducto(idProducto);
+            //CargarDataProducto(idProducto);
         }
 
-        private async void CargarDataProducto(int idProducto)
-        {
-            InventarioDTO inventariodto = await viewModel.GetDataProducto(idProducto);
-            TxtNombre.Text = inventariodto.Nombre;
-            Int32.Parse(TxtCantidad.Text = inventariodto.Cantidad);
-            TxtDescripcion.Text = inventariodto.Descripcion;
-            TxtImagenProducto.Text = inventariodto.ImagenProducto;
-            Int32.Parse(TxtPrecio.Text = inventariodto.PrecioUnidad);
-        }
+        //private async void CargarDataProducto(int idProducto)
+        //{
+        //    InventarioDTO inventariodto = await viewModel.GetDataProducto(idProducto);
+        //    TxtNombre.Text = inventariodto.Nombre;
+        //    Int32.Parse(TxtCantidad.Text = inventariodto.Cantidad);
+        //    TxtDescripcion.Text = inventariodto.Descripcion;
+        //    TxtImagenProducto.Text = inventariodto.ImagenProducto;
+        //    Int32.Parse(TxtPrecio.Text = inventariodto.PrecioUnidad);
+        //}
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
         {
@@ -47,7 +47,13 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 return;
             }
 
-            bool R = await viewModel.ActualizarProducto(
+            //confirmación de la acción a realizar
+            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere editar a este usuario?", "Si", "No");
+
+            if (answer)
+            {
+
+                bool R = await viewModel.ActualizarProducto(
                 idProductoVM,
                 TxtNombre.Text.Trim(),
                 Int32.Parse(TxtCantidad.Text.Trim()),
@@ -55,14 +61,15 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 TxtImagenProducto.Text.Trim(),
                 Int32.Parse(TxtPrecio.Text.Trim()));
 
-            if (R)
-            {
-                await DisplayAlert("Exito!", "Producto modificado correctamente", "OK");
-                await Navigation.PopAsync();
-            }
-            else
-            {
-                await DisplayAlert("Error", "Hubo un error al intentar agregar el producto", "OK");
+                if (R)
+                {
+                    await DisplayAlert("Exito!", "Producto modificado correctamente", "OK");
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Hubo un error al intentar agregar el producto", "OK");
+                }
             }
         }
 

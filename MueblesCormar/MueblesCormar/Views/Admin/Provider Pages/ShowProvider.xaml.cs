@@ -59,7 +59,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
                 {
                     if (isDeletePage)
                     {
-                        var answer = await DisplayAlert("Confirmacion requerida!", "seguro que deseas eliminar este proveedor?", "Yes", "Nop");
+                        var answer = await DisplayAlert("Confirmacion requerida!", "seguro que deseas eliminar este proveedor?", "Si", "No");
 
                         if (answer)
                         {

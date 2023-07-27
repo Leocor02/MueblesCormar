@@ -88,10 +88,10 @@ namespace MueblesCormar.Views
                 if (answer)
                 {
                     bool R = await viewModel.AgregarNuevoUsuario(TxtNombre.Text.Trim(),
-                                                            TxtEmail.Text.Trim(),
-                                                            TxtContraseña.Text.Trim(),
-                                                            TxtTelefono.Text.Trim(),
-                                                            rolID);
+                                                                 TxtEmail.Text.Trim(),
+                                                                 TxtContraseña.Text.Trim(),
+                                                                 TxtTelefono.Text.Trim(),
+                                                                 rolID);
                     if (R)
                     {
                         await DisplayAlert("ÉXITO", "Usuario agregado", "OK");

@@ -60,7 +60,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 {
                     if (isDeletePage)
                     {
-                        var answer = await DisplayAlert("Confirmación requerida", "Seguro que desea eliminar este empleado", "Yes", "No");
+                        var answer = await DisplayAlert("Confirmación requerida", "Seguro que desea eliminar este empleado", "Si", "No");
 
                         if (answer)
                         {
