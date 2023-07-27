@@ -4,7 +4,10 @@ using System.Text;
 
 namespace MueblesCormar.Models.DTOs
 {
-    internal class ProveedorInventarioDTO
+    public class ProveedorInventarioDTO
     {
+        public int IdproveedorInventario { get; set; }
+        public int Idproveedor { get; set; }
+        public int Idproducto { get; set; }
     }
 }
