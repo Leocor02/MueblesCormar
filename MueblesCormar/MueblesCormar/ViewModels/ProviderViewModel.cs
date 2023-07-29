@@ -47,7 +47,7 @@ namespace MueblesCormar.ViewModels
 
         }
 
-        //función para actualizar usuario
+        //función para actualizar proveedor
         public async Task<bool> ActualizarProveedor(int idProveedor,
                                                   string pNombre,
                                                   string pDireccion)

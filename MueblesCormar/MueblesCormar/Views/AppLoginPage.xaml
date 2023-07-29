@@ -8,6 +8,8 @@
     <ContentPage.Content>
         <StackLayout Padding="50,0,50,0" VerticalOptions="Center">
 
+            <Image Source="LogoUsuario" />
+
             <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#0D0101" PlaceholderColor="#080912"/>
 
             <StackLayout Orientation="Horizontal" Spacing="20" VerticalOptions="FillAndExpand" Padding="0,10,0,30">

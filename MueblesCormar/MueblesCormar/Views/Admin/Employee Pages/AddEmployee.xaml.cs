@@ -17,6 +17,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
         public AddEmployee()
         {
             InitializeComponent();
+            BindingContext = viewmodel = new UserViewModel();
         }
 
         private async void BtnAgregar_Clicked(object sender, EventArgs e)

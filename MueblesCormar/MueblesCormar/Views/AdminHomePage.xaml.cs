@@ -32,5 +32,10 @@ namespace MueblesCormar.Views
         {
             await Navigation.PushAsync(new InventoryManagementPage());
         }
+
+        private async void BtnProveedorInventario_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProvInvenManagementPage());
+        }
     }
 }

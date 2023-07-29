@@ -172,9 +172,8 @@ namespace MueblesCormar.Models.DTOs
                 string msg = ex.Message;
                 throw;
             }
-
-
-
         }
+
+
     }
 }

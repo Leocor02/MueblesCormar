@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MueblesCormar.Views.Admin.ProvInven_Pages.AddProvInven">
+    <ContentPage.Content>
+        <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
+
+            <Label Padding="0,20,0,10" Text="Añadir un proveedor" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+
+            <Entry x:Name="TxtIdProveedor" Placeholder="ID del proveedor"/>
+            <Entry x:Name="TxtIdProducto" Placeholder="ID del producto"/>
+            <Entry x:Name="TxtNombreProveedor" Placeholder="Nombre del proveedor"/>
+            <Entry x:Name="TxtNombreProducto" Placeholder="Nombre del producto"/>
+
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0"
+                        x:Name="BtnAgregar" Text="Agregar" 
+                        FontSize="17" CornerRadius="20" 
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        BackgroundColor="#094AC1"
+                        Clicked="BtnAgregar_Clicked"/>
+
+                <Button Grid.Row="0" Grid.Column="1" 
+                        x:Name="BtnCancelar" Text="Cancelar" 
+                        FontSize="17" CornerRadius="20" 
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        BackgroundColor="#094AC1"
+                        Clicked="BtnCancelar_Clicked"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

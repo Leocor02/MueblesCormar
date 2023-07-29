@@ -17,6 +17,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
         public AddProvider()
         {
             InitializeComponent();
+            BindingContext = viewModel = new ProviderViewModel();
         }
 
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
 
                 if (R)
                 {
-                    await DisplayAlert("ÉXITO", "Porveedor agregado", "OK");
+                    await DisplayAlert("ÉXITO", "Proveedor agregado", "OK");
                     await Navigation.PopAsync();
                 }
                 else
