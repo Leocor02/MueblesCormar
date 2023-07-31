@@ -4,11 +4,12 @@
              x:Class="MueblesCormar.Views.UserSignUpPage"
              Shell.NavBarIsVisible="false"
              NavigationPage.HasNavigationBar="False"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#3B3B3C">
     <ContentPage.Content>
-        <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="20,80,20,0" HorizontalOptions="FillAndExpand">
 
-            <Label Padding="0,20,0,10" Text="Crear un usuario" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+            <Label Padding="0,20,0,10" Text="Crear un usuario" TextColor="White" FontSize="Large" HorizontalOptions="Center"/>
 
             <Entry x:Name="TxtNombre" Placeholder="Nombre"/>
             <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
@@ -16,7 +17,7 @@
             <Entry x:Name="TxtTelefono" Placeholder="Teléfono" Keyboard="Numeric"/>
 
 
-            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 
             <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -27,20 +28,39 @@
                 </Grid.ColumnDefinitions>
                 
                 <Button Grid.Row="0" Grid.Column="0"  
-                        x:Name="BtnRegistrar" Text="Registrarse" 
+                        x:Name="BtnRegistrar" Text="Registrarse"
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
-                        BackgroundColor="#094AC1"
-                        Clicked="BtnRegistrar_Clicked"/>
+                        BackgroundColor="#3B3B3C" TextColor="White"
+                        BorderWidth="2" BorderColor="#2399D4"
+                        Clicked="BtnRegistrar_Clicked">
+
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#2399D4"/>
+                            <Setter Property="TextColor" Value="#D5CDCD"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+                
 
                 <Button Grid.Row="0" Grid.Column="1" 
                         x:Name="BtnCancelar" Text="Cancelar" 
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
-                        BackgroundColor="#094AC1"
-                        Clicked="BtnCancelar_Clicked"/>
+                         BackgroundColor="#3B3B3C" TextColor="White"
+                        BorderWidth="2" BorderColor="#2399D4"
+                        Clicked="BtnCancelar_Clicked">
+
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#2399D4"/>
+                            <Setter Property="TextColor" Value="#D5CDCD"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
 
             </Grid>
 

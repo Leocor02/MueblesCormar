@@ -10,8 +10,8 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                 Padding="0,20,0,10"
-                FontSize="Large"
-                TextColor="#282424"/>
+                FontSize="Title"
+                TextColor="White"/>
 
 
                 <ListView x:Name="LstProveedor" RowHeight="100" ItemTapped="LstProveedor_ItemTapped">

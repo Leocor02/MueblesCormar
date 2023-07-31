@@ -4,26 +4,52 @@
              x:Class="MueblesCormar.Views.AppLoginPage"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#BECFE3">
+             BackgroundColor="#3B3B3C">
     <ContentPage.Content>
         <StackLayout Padding="50,0,50,0" VerticalOptions="Center">
 
-            <Image Source="LogoUsuario" />
+            <Label Text="Muebles Cormar" FontSize="Title" HorizontalOptions="Center" TextColor="White" Padding="0,0,0,25"/>
 
-            <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#0D0101" PlaceholderColor="#080912"/>
+            <Image Source="LogoUsuario"/>
+
+            <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#D5CDCD" PlaceholderColor="#D5CDCD" Margin="0,25,0,0"/>
 
             <StackLayout Orientation="Horizontal" Spacing="20" VerticalOptions="FillAndExpand" Padding="0,10,0,30">
-                <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="#0D0101" PlaceholderColor="#080912" WidthRequest="210"/>
+                <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="#D5CDCD" PlaceholderColor="#D5CDCD" WidthRequest="210"/>
 
                 <StackLayout>
                     <Switch x:Name="SwMostrarContraseña" IsToggled="False" Toggled="CmdMostrarContraseña"/>
-                    <Label Text="Ver Contraseña" FontSize="11" TextColor="#000000" HorizontalTextAlignment="Center"/>
+                    <Label Text="Ver Contraseña" FontSize="11" TextColor="White" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 
             </StackLayout>
 
-            <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#07255C" Margin="0,0,0,5" Clicked="BtnIniciarSesion_Clicked"/>
-            <Button x:Name="BtnRegistrarse" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#07255C" Clicked="BtnRegistrarse_Clicked"/>
+            <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22"
+                    CornerRadius="20" BackgroundColor="#3B3B3C"
+                    BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                    Clicked="BtnIniciarSesion_Clicked">
+
+                <Button.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="BackgroundColor" Value="#2399D4"/>
+                        <Setter Property="TextColor" Value="#D5CDCD"/>
+                    </Trigger>
+                </Button.Triggers>
+            </Button>
+
+            
+            <Button x:Name="BtnRegistrarse" Text="Registrarse" FontSize="22"
+                    CornerRadius="20" BackgroundColor="#3B3B3C" 
+                    BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                    Clicked="BtnRegistrarse_Clicked">
+
+                <Button.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="BackgroundColor" Value="#2399D4"/>
+                        <Setter Property="TextColor" Value="#D5CDCD"/>
+                    </Trigger>
+                </Button.Triggers>
+            </Button>
 
         </StackLayout>
     </ContentPage.Content>

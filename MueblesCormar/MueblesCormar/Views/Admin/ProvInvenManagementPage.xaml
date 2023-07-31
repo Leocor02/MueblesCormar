@@ -8,7 +8,7 @@
 
                 <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
-                    <Label Text="Opciones (Administrar ProveedorInventario)" 
+                    <Label Text="Opciones (Administrar Proveedores de inventario)" 
                        Margin="40"
                        HorizontalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center"
@@ -17,7 +17,7 @@
                        TextColor="White"
                        />
 
-                    <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+                    <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -34,44 +34,83 @@
                             Text="Ver Proveedor"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#69B5FF"
-                            Clicked="BtnVerProveedorInventario_Clicked"/>
+                            BackgroundColor="#3B3B3C" TextColor="White"
+                            BorderWidth="2" BorderColor="#2399D4"
+                            Clicked="BtnVerProveedorInventario_Clicked">
+
+                            <Button.Triggers>
+                                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                    <Setter Property="TextColor" Value="#D5CDCD"/>
+                                </Trigger>
+                            </Button.Triggers>
+                        </Button>
+                        
 
                         <Button Grid.Row="0" Grid.Column="1" 
                             x:Name="BtnAgregarProveedorInventario"
                             Text="Agregar Proveedor"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#F070FF"
-                            Clicked="BtnAgregarProveedorInventario_Clicked"/>
+                            BackgroundColor="#3B3B3C" TextColor="White"
+                            BorderWidth="2" BorderColor="#2399D4"
+                            Clicked="BtnAgregarProveedorInventario_Clicked">
+
+                            <Button.Triggers>
+                                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                    <Setter Property="TextColor" Value="#D5CDCD"/>
+                                </Trigger>
+                            </Button.Triggers>
+                        </Button>
+                        
 
                         <Button Grid.Row="1" Grid.Column="0" 
                             x:Name="BtnModificaProveedorInventario"
                             Text="Modificar Proveedor"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#4FB756"
-                            Clicked="BtnModificaProveedorInventario_Clicked"/>
+                            BackgroundColor="#3B3B3C" TextColor="White"
+                            BorderWidth="2" BorderColor="#2399D4"
+                            Clicked="BtnModificaProveedorInventario_Clicked">
+
+                            <Button.Triggers>
+                                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                    <Setter Property="TextColor" Value="#D5CDCD"/>
+                                </Trigger>
+                            </Button.Triggers>
+                        </Button>
+                        
 
                         <Button Grid.Row="1" Grid.Column="1" 
                             x:Name="BtnEliminarProveedorInventario"
                             Text="Eliminar Proveedor"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#FF7F7F"
-                            Clicked="BtnEliminarProveedorInventario_Clicked"/>
+                            BackgroundColor="#3B3B3C" TextColor="White"
+                            BorderWidth="2" BorderColor="#2399D4"
+                            Clicked="BtnEliminarProveedorInventario_Clicked">
+
+                            <Button.Triggers>
+                                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                    <Setter Property="TextColor" Value="#D5CDCD"/>
+                                </Trigger>
+                            </Button.Triggers>
+                        </Button>
 
                     </Grid>
 

@@ -37,5 +37,15 @@ namespace MueblesCormar.Views
         {
             await Navigation.PushAsync(new ProvInvenManagementPage());
         }
+
+        private async void BtnCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere cerrar sesión?", "Si", "No");
+
+            if (answer)
+            {
+                await Navigation.PopAsync();
+            }
+        }
     }
 }

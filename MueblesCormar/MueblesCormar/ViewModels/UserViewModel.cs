@@ -71,7 +71,7 @@ namespace MueblesCormar.ViewModels
 
 
         //función para agregar usuario
-        public async Task<bool> AgregarNuevoUsuario(string pName,
+        public async Task<bool> AgregarNuevoUsuario(string pNombre,
                                                     string pEmail,
                                                     string pContraseña,
                                                     string pTelefono,
@@ -82,7 +82,7 @@ namespace MueblesCormar.ViewModels
 
             try
             {
-                MiUsuario.Nombre = pName;
+                MiUsuario.Nombre = pNombre;
                 MiUsuario.Email = pEmail;
                 MiUsuario.Contraseña = pContraseña;
                 MiUsuario.Telefono = pTelefono;

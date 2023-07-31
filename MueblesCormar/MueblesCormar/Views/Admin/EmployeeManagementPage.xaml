@@ -33,44 +33,80 @@
                             Text="Ver Empleados"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
-                            CornerRadius="20"
-                            BackgroundColor="#69B5FF"
-                            Clicked="BtnVerEmpleado_Clicked"/>
+                            CornerRadius="20" BackgroundColor="#3B3B3C" Margin="0,0,0,5"
+                            BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                            Clicked="BtnVerEmpleado_Clicked">
+
+                        <Button.Triggers>
+                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                <Setter Property="TextColor" Value="#D5CDCD"/>
+                            </Trigger>
+                        </Button.Triggers>
+                    </Button>
+                    
 
                     <Button Grid.Row="0" Grid.Column="1" 
                             x:Name="BtnAgregarEmpleado"
                             Text="Agregar Empleado"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
-                            CornerRadius="20"
-                            BackgroundColor="#F070FF"
-                            Clicked="BtnAgregarEmpleado_Clicked"/>
+                            CornerRadius="20" BackgroundColor="#3B3B3C" Margin="0,0,0,5"
+                            BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                            Clicked="BtnAgregarEmpleado_Clicked">
+
+                        <Button.Triggers>
+                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                <Setter Property="TextColor" Value="#D5CDCD"/>
+                            </Trigger>
+                        </Button.Triggers>
+                    </Button>
+                    
 
                     <Button Grid.Row="1" Grid.Column="0" 
                             x:Name="BtnModificarEmpleado"
                             Text="Modificar Empleado"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
-                            CornerRadius="20"
-                            BackgroundColor="#4FB756"
-                            Clicked="BtnModificarEmpleado_Clicked"/>
+                            CornerRadius="20" BackgroundColor="#3B3B3C" Margin="0,0,0,5"
+                            BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                            Clicked="BtnModificarEmpleado_Clicked">
+
+                        <Button.Triggers>
+                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                <Setter Property="TextColor" Value="#D5CDCD"/>
+                            </Trigger>
+                        </Button.Triggers>
+                    </Button>
+                    
 
                     <Button Grid.Row="1" Grid.Column="1" 
                             x:Name="BtnEliminarEmpleado"
                             Text="Eliminar Empleado"
                             HeightRequest="150"
                             WidthRequest="150"
-                            FontSize="15"
+                            FontSize="18"
                             HorizontalOptions="Center"
-                            CornerRadius="20"
-                            BackgroundColor="#FF7F7F"
-                            Clicked="BtnEliminarEmpleado_Clicked"/>
+                            CornerRadius="20" BackgroundColor="#3B3B3C" Margin="0,0,0,5"
+                            BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                            Clicked="BtnEliminarEmpleado_Clicked">
+
+                        <Button.Triggers>
+                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                <Setter Property="BackgroundColor" Value="#2399D4"/>
+                                <Setter Property="TextColor" Value="#D5CDCD"/>
+                            </Trigger>
+                        </Button.Triggers>
+                    </Button>
+                    
 
                 </Grid>
 

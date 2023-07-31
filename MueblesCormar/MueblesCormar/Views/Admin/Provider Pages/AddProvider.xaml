@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MueblesCormar.Views.Admin.Porvider_Pages.AddProvider">
+             x:Class="MueblesCormar.Views.Admin.Porvider_Pages.AddProvider"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#3B3B3C">
     <ContentPage.Content>
         <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
 
-            <Label Padding="0,20,0,10" Text="Añadir un proveedor" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+            <Label Padding="0,20,0,10" Text="Añadir un proveedor" TextColor="White" FontSize="Large" HorizontalOptions="Center"/>
 
             <Entry x:Name="TxtNombre" Placeholder="Nombre del proveedor"/>
             <Entry x:Name="TxtDireccion" Placeholder="Dirección"/>
 
-            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -25,16 +28,35 @@
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
-                        BackgroundColor="#094AC1"
-                        Clicked="BtnAgregar_Clicked"/>
+                        BackgroundColor="#3B3B3C" TextColor="White"
+                        BorderWidth="2" BorderColor="#2399D4"
+                        Clicked="BtnAgregar_Clicked">
 
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#2399D4"/>
+                            <Setter Property="TextColor" Value="#D5CDCD"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                
                 <Button Grid.Row="0" Grid.Column="1" 
                         x:Name="BtnCancelar" Text="Cancelar" 
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
-                        BackgroundColor="#094AC1"
-                        Clicked="BtnCancelar_Clicked"/>
+                        BackgroundColor="#3B3B3C" TextColor="White"
+                        BorderWidth="2" BorderColor="#2399D4"
+                        Clicked="BtnCancelar_Clicked">
+
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#2399D4"/>
+                            <Setter Property="TextColor" Value="#D5CDCD"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
 
             </Grid>
 
