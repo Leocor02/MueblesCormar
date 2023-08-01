@@ -21,18 +21,18 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
         {
             InitializeComponent();
             BindingContext = viewModel = new ProvInvenViewModel();
-            //CargarDataProveedorInventario(idProveedorInventario);
+            CargarDataProveedorInventario(idProveedorInventario);
             idProveedorInventarioVM = idProveedorInventario;
         }
 
-        //private async void CargarDataProveedorInventario(int idProveedorInventario)
-        //{
-        //    ProveedorInventarioDTO proveedorinventariodto = await viewModel.GetDataProveedorInventario(idProveedorInventario);
-        //    TxtIdProveedor.Text = proveedorinventariodto.Idproveedor;
-        //    TxtIdProducto.Text = proveedorinventariodto.Idproducto;
-        //    TxtNombreProveedor.Text = proveedorinventariodto.NombreProveedor;
-        //    TxtNombreProducto.Text = proveedorinventariodto.NombreProducto;
-        //}
+        private async void CargarDataProveedorInventario(int idProveedorInventario)
+        {
+            ProveedorInventarioDTO proveedorinventariodto = await viewModel.GetDataProveedorInventario(idProveedorInventario);
+            //TxtIdProveedor.Text = proveedorinventariodto.Idproveedor;
+            //TxtIdProducto.Text = proveedorinventariodto.Idproducto;
+            TxtNombreProveedor.Text = proveedorinventariodto.NombreProveedor;
+            TxtNombreProducto.Text = proveedorinventariodto.NombreProducto;
+        }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
         {

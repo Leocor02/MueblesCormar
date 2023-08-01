@@ -19,13 +19,13 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
 
         bool isEditPage { get; set; }
         bool isDeletePage { get; set; }
-        public ShowInventory(bool EditPage, bool DeletePage)
+        public ShowInventory(bool IsEdit, bool IsDelete)
         {
             InitializeComponent();
             BindingContext = vm = new InventoryViewModel();
             CargaListaInventario();
-            isEditPage = EditPage;
-            isDeletePage = DeletePage;
+            isEditPage = IsEdit;
+            isDeletePage = IsDelete;
         }
 
         private async void CargaListaInventario()

@@ -19,13 +19,13 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
 
         bool isEditPage { get; set; }
         bool isDeletePage { get; set; }
-        public ShowProvInven(bool EditPage, bool DeletePage)
+        public ShowProvInven(bool isEdit, bool isDelete)
         {
             InitializeComponent();
             BindingContext = viewModel = new ProvInvenViewModel();
             CargaListaProveedorInventario();
-            isEditPage = EditPage;
-            isDeletePage = DeletePage;
+            isEditPage = isEdit;
+            isDeletePage = isDelete;
         }
 
         private async void CargaListaProveedorInventario()
@@ -64,13 +64,13 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
 
                         if (answer)
                         {
-                            DeleteProveedorInventario(selectedItem.Idproveedor);
+                            DeleteProveedorInventario(selectedItem.IdproveedorInventario);
                         }
                     }
 
                     if (isEditPage)
                     {
-                        await Navigation.PushAsync(new EditProvInven(selectedItem.Idproveedor));
+                        await Navigation.PushAsync(new EditProvInven(selectedItem.IdproveedorInventario));
                     }
                 }
             }

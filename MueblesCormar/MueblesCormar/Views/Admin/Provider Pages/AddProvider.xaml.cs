@@ -20,6 +20,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
             BindingContext = viewModel = new ProviderViewModel();
         }
 
+
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
             if (TxtNombre.Text == null || string.IsNullOrEmpty(TxtNombre.Text.Trim()) ||

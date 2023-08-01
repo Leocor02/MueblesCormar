@@ -107,7 +107,7 @@ namespace MueblesCormar.Models.DTOs
         {
             try
             {
-                string RouteSufix = string.Format("Productos/{0}", idProducto);
+                string RouteSufix = string.Format("Inventarios/{0}", idProducto);
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);
@@ -147,7 +147,7 @@ namespace MueblesCormar.Models.DTOs
         {
             try
             {
-                string RouteSufix = string.Format("Productos/{0}", idProducto);
+                string RouteSufix = string.Format("Inventarios/{0}", idProducto);
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);

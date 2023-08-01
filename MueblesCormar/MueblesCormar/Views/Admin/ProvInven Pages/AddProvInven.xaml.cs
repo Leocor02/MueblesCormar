@@ -45,7 +45,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
 
                 if (R)
                 {
-                    await DisplayAlert("ÉXITO", "PorveedorInventario agregado", "OK");
+                    await DisplayAlert("ÉXITO", "ProveedorInventario agregado", "OK");
                     await Navigation.PopAsync();
                 }
                 else

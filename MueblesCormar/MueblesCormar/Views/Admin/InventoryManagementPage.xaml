@@ -31,7 +31,7 @@
 
                     <Button Grid.Row="0" Grid.Column="0" 
                             x:Name="BtnVerInventario"
-                            Text="Ver Inventario"
+                            Text="Ver Producto"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="18"
@@ -52,7 +52,7 @@
 
                     <Button Grid.Row="0" Grid.Column="1" 
                             x:Name="BtnAgregarInventario"
-                            Text="Agregar Inventario"
+                            Text="Agregar Producto"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="18"
@@ -73,7 +73,7 @@
 
                     <Button Grid.Row="1" Grid.Column="0" 
                             x:Name="BtnModificarInventario"
-                            Text="Modificar Inventario"
+                            Text="Modificar Producto"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="18"
@@ -94,7 +94,7 @@
 
                     <Button Grid.Row="1" Grid.Column="1" 
                             x:Name="BtnEliminarInventario"
-                            Text="Eliminar Inventario"
+                            Text="Eliminar Producto"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="18"

@@ -22,18 +22,18 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
             InitializeComponent();
             BindingContext = viewModel = new InventoryViewModel();
             idProductoVM = idProducto;
-            //CargarDataProducto(idProducto);
+            CargarDataProducto(idProducto);
         }
 
-        //private async void CargarDataProducto(int idProducto)
-        //{
-        //    InventarioDTO inventariodto = await viewModel.GetDataProducto(idProducto);
-        //    TxtNombre.Text = inventariodto.Nombre;
-        //    Int32.Parse(TxtCantidad.Text = inventariodto.Cantidad);
-        //    TxtDescripcion.Text = inventariodto.Descripcion;
-        //    TxtImagenProducto.Text = inventariodto.ImagenProducto;
-        //    Int32.Parse(TxtPrecio.Text = inventariodto.PrecioUnidad);
-        //}
+        private async void CargarDataProducto(int idProducto)
+        {
+            InventarioDTO inventariodto = await viewModel.GetDataProducto(idProducto);
+            TxtNombre.Text = inventariodto.Nombre;
+            //Int32.Parse(TxtCantidad.Text = inventariodto.Cantidad);
+            TxtDescripcion.Text = inventariodto.Descripcion;
+            TxtImagenProducto.Text = inventariodto.ImagenProducto;
+            //Int32.Parse(TxtPrecio.Text = inventariodto.PrecioUnidad);
+        }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
         {
