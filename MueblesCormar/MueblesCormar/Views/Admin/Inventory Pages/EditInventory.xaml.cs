@@ -29,10 +29,10 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
         {
             InventarioDTO inventariodto = await viewModel.GetDataProducto(idProducto);
             TxtNombre.Text = inventariodto.Nombre;
-            //Int32.Parse(TxtCantidad.Text = inventariodto.Cantidad);
+            TxtCantidad.Text = Convert.ToString(inventariodto.Cantidad);
             TxtDescripcion.Text = inventariodto.Descripcion;
             TxtImagenProducto.Text = inventariodto.ImagenProducto;
-            //Int32.Parse(TxtPrecio.Text = inventariodto.PrecioUnidad);
+            TxtPrecio.Text = Convert.ToString(inventariodto.PrecioUnidad);
         }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)

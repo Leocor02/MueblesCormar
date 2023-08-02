@@ -56,6 +56,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 idUsuarioVM,
                 TxtNombre.Text.Trim(),
                 TxtEmail.Text.Trim(),
+                TxtContrasennia.Text.Trim(),
                 TxtTelefono.Text.Trim());
 
                 if (R)

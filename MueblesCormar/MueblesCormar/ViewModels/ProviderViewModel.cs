@@ -48,9 +48,7 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para actualizar proveedor
-        public async Task<bool> ActualizarProveedor(int idProveedor,
-                                                  string pNombre,
-                                                  string pDireccion)
+        public async Task<bool> ActualizarProveedor(int idProveedor, string pNombre, string pDireccion)
         {
             if (IsBusy) return false;
             IsBusy = true;

@@ -66,7 +66,7 @@ namespace MueblesCormar.Models.DTOs
         {
             try
             {
-                string RouteSufix = string.Format("ProveedorInventario/GetDataProveedorInventario?idProveedorInventario={0}", idProveedorInventario);
+                string RouteSufix = string.Format("ProveedorInventarios/GetDataProveedorInventario?idProveedorInventario={0}", idProveedorInventario);
 
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
@@ -166,7 +166,7 @@ namespace MueblesCormar.Models.DTOs
 
                 HttpStatusCode statusCode = response.StatusCode;
 
-                if (statusCode == HttpStatusCode.OK)
+                if (statusCode == HttpStatusCode.NoContent)
                 {
                     return true;
                 }

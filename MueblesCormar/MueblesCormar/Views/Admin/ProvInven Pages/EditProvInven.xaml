@@ -8,14 +8,14 @@
     <ContentPage.Content>
         <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
 
-            <Label Padding="0,20,0,10" Text="Editar Proveedor" TextColor="#000000" FontSize="Large" HorizontalOptions="Center"/>
+            <Label Padding="0,20,0,10" Text="Editar Proveedor" TextColor="White" FontSize="Title" HorizontalOptions="Center"/>
 
             <Entry x:Name="TxtIdProveedor" Placeholder="ID del proveedor"/>
             <Entry x:Name="TxtIdProducto" Placeholder="ID del producto"/>
             <Entry x:Name="TxtNombreProveedor" Placeholder="Nombre del proveedor"/>
             <Entry x:Name="TxtNombreProducto" Placeholder="Nombre del producto"/>
 
-            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

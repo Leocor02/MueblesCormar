@@ -108,7 +108,7 @@ namespace MueblesCormar.ViewModels
             }
         }
 
-        //función para actualizar proveedor
+        //función para actualizar proveedor inventario
         public async Task<bool> ActualizarProveedorInventario(int idProveedorInventario,
                                                               int pIdProveedor,
                                                               int pIdProducto,

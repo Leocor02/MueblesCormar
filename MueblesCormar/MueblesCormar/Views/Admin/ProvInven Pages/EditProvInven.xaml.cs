@@ -28,8 +28,8 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
         private async void CargarDataProveedorInventario(int idProveedorInventario)
         {
             ProveedorInventarioDTO proveedorinventariodto = await viewModel.GetDataProveedorInventario(idProveedorInventario);
-            //TxtIdProveedor.Text = proveedorinventariodto.Idproveedor;
-            //TxtIdProducto.Text = proveedorinventariodto.Idproducto;
+            TxtIdProveedor.Text = Convert.ToString(proveedorinventariodto.Idproveedor);
+            TxtIdProducto.Text = Convert.ToString(proveedorinventariodto.Idproducto);
             TxtNombreProveedor.Text = proveedorinventariodto.NombreProveedor;
             TxtNombreProducto.Text = proveedorinventariodto.NombreProducto;
         }
