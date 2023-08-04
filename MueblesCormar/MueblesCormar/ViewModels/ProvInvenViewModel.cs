@@ -19,7 +19,7 @@ namespace MueblesCormar.ViewModels
             MiProveedorInventarioDTO = new ProveedorInventarioDTO();
         }
 
-        public async Task<bool> AgregarNuevoProveedorInventario(int pIdProveedor,
+        public async Task<bool> AddProveedorInventario(int pIdProveedor,
                                                                 int pIdProducto,
                                                                 string pNombreProveedor,
                                                                 string pNombreProducto)
@@ -35,7 +35,7 @@ namespace MueblesCormar.ViewModels
                 MiProveedorInventarioDTO.NombreProducto = pNombreProducto;
 
 
-                bool R = await MiProveedorInventarioDTO.AgregarProveedorInventario();
+                bool R = await MiProveedorInventarioDTO.AddProveedorInventario();
 
                 return R;
             }
@@ -109,7 +109,7 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para actualizar proveedor inventario
-        public async Task<bool> ActualizarProveedorInventario(int idProveedorInventario,
+        public async Task<bool> UpdateProveedorInventario(int idProveedorInventario,
                                                               int pIdProveedor,
                                                               int pIdProducto,
                                                               string pNombreProveedor,
@@ -127,7 +127,7 @@ namespace MueblesCormar.ViewModels
                 MiProveedorInventarioDTO.NombreProducto = pNombreProducto;
 
 
-                bool R = await MiProveedorInventarioDTO.ActualizarProveedorInventario(idProveedorInventario);
+                bool R = await MiProveedorInventarioDTO.UpdateProveedorInventario(idProveedorInventario);
 
                 return R;
             }

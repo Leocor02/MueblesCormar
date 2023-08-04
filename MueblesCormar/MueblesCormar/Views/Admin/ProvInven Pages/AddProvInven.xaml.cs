@@ -37,7 +37,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
 
             if (answer)
             {
-                bool R = await viewModel.AgregarNuevoProveedorInventario(Int32.Parse(TxtIdProveedor.Text.Trim()),
+                bool R = await viewModel.AddProveedorInventario(Int32.Parse(TxtIdProveedor.Text.Trim()),
                                                                          Int32.Parse(TxtIdProducto.Text.Trim()),
                                                                          TxtNombreProveedor.Text.Trim(),
                                                                          TxtNombreProducto.Text.Trim());

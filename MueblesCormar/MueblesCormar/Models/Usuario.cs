@@ -33,7 +33,7 @@ namespace MueblesCormar.Models
 
 
         //función para agregar un usuario a la base de datos
-        public async Task<bool> AgregarUsuario()
+        public async Task<bool> AddUsuario()
         {
             try
             {

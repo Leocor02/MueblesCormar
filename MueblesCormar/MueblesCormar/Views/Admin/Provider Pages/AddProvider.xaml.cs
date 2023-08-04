@@ -36,7 +36,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
 
             if (answer)
             {
-                bool R = await viewModel.AgregarNuevoProveedor(TxtNombre.Text.Trim(), TxtDireccion.Text.Trim());
+                bool R = await viewModel.AddProvedor(TxtNombre.Text.Trim(), TxtDireccion.Text.Trim());
                                                              
 
                 if (R)

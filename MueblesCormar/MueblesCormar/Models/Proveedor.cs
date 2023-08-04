@@ -25,7 +25,7 @@ namespace MueblesCormar.Models
         //public virtual ICollection<ProveedorInventario> ProveedorInventarios { get; set; }
 
         //función para agregar un usuario a la base de datos
-        public async Task<bool> AgregarProvedor()
+        public async Task<bool> AddProvedor()
         {
             try
             {

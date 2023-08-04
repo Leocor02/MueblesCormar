@@ -50,7 +50,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
             if (answer)
             {
 
-                bool R = await viewModel.ActualizarProveedorInventario(
+                bool R = await viewModel.UpdateProveedorInventario(
                 idProveedorInventarioVM,
                 Int32.Parse(TxtIdProveedor.Text.Trim()),
                 Int32.Parse(TxtIdProducto.Text.Trim()),

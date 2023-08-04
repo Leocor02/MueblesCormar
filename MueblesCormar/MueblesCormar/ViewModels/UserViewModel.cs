@@ -71,7 +71,7 @@ namespace MueblesCormar.ViewModels
 
 
         //función para agregar usuario
-        public async Task<bool> AgregarNuevoUsuario(string pNombre,
+        public async Task<bool> AddUsuario(string pNombre,
                                                     string pEmail,
                                                     string pContraseña,
                                                     string pTelefono,
@@ -88,7 +88,7 @@ namespace MueblesCormar.ViewModels
                 MiUsuario.Telefono = pTelefono;
                 MiUsuario.IdrolUsuario = rolID;
 
-                bool R = await MiUsuario.AgregarUsuario();
+                bool R = await MiUsuario.AddUsuario();
 
                 return R;
             }
@@ -213,7 +213,7 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para actualizar usuario
-        public async Task<bool> ActualizarUsuario(int idUsuario,
+        public async Task<bool> UpdateUsuario(int idUsuario,
                                                   string pNombre,
                                                   string pEmail,
                                                   string pContrasennia,
@@ -231,7 +231,7 @@ namespace MueblesCormar.ViewModels
                 MiUsuarioDTO.Telefono = pTelefono;
           
 
-                bool R = await MiUsuarioDTO.ActualizarUsuario(idUsuario);
+                bool R = await MiUsuarioDTO.UpdateUsuario(idUsuario);
 
                 return R;
             }

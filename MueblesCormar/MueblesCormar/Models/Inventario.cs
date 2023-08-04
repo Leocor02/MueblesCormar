@@ -30,7 +30,7 @@ namespace MueblesCormar.Models
         //public virtual ICollection<DetalleRegistro> DetalleRegistros { get; set; }
         //public virtual ICollection<ProveedorInventario> ProveedorInventarios { get; set; }
 
-        public async Task<bool> AgregarProducto()
+        public async Task<bool> AddProducto()
         {
             try
             {

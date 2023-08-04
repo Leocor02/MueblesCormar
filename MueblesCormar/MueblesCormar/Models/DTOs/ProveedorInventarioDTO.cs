@@ -22,7 +22,7 @@ namespace MueblesCormar.Models.DTOs
         public string NombreProducto { get; set; } = null!;
 
         //función para agregar un usuario a la base de datos
-        public async Task<bool> AgregarProveedorInventario()
+        public async Task<bool> AddProveedorInventario()
         {
             try
             {
@@ -142,7 +142,7 @@ namespace MueblesCormar.Models.DTOs
             }
         }
 
-        public async Task<bool> ActualizarProveedorInventario(int idProveedorInventario)
+        public async Task<bool> UpdateProveedorInventario(int idProveedorInventario)
         {
             try
             {

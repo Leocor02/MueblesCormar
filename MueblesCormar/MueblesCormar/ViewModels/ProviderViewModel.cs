@@ -19,7 +19,7 @@ namespace MueblesCormar.ViewModels
             MiProveedorDTO = new ProveedorDTO();
         }
 
-        public async Task<bool> AgregarNuevoProveedor(string pNombre,
+        public async Task<bool> AddProvedor(string pNombre,
                                                       string pDireccion)
         {
             if (IsBusy) return false;
@@ -31,7 +31,7 @@ namespace MueblesCormar.ViewModels
                 MiProveedor.Direccion = pDireccion;
                 
 
-                bool R = await MiProveedor.AgregarProvedor();
+                bool R = await MiProveedor.AddProvedor();
 
                 return R;
             }
@@ -48,7 +48,7 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para actualizar proveedor
-        public async Task<bool> ActualizarProveedor(int idProveedor, string pNombre, string pDireccion)
+        public async Task<bool> UpdateProveedor(int idProveedor, string pNombre, string pDireccion)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -60,7 +60,7 @@ namespace MueblesCormar.ViewModels
                 MiProveedorDTO.Direccion = pDireccion;
 
 
-                bool R = await MiProveedorDTO.ActualizarProveedor(idProveedor);
+                bool R = await MiProveedorDTO.UpdateProveedor(idProveedor);
 
                 return R;
             }

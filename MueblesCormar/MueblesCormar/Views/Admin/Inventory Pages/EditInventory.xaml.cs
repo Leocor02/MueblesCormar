@@ -48,12 +48,12 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
             }
 
             //confirmación de la acción a realizar
-            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere editar a este usuario?", "Si", "No");
+            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere editar a este producto?", "Si", "No");
 
             if (answer)
             {
 
-                bool R = await viewModel.ActualizarProducto(
+                bool R = await viewModel.UpdateProducto(
                 idProductoVM,
                 TxtNombre.Text.Trim(),
                 Int32.Parse(TxtCantidad.Text.Trim()),

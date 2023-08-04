@@ -20,7 +20,7 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para agregar un producto
-        public async Task<bool> AgregarNuevoProducto(string pNombre,
+        public async Task<bool> AddProducto(string pNombre,
                                             int pCantidad,
                                             string pDescripcion,
                                             string pImagenProducto,
@@ -37,7 +37,7 @@ namespace MueblesCormar.ViewModels
                 MiInventario.ImagenProducto = pImagenProducto;
                 MiInventario.PrecioUnidad = pPrecioUnidad;
 
-                bool R = await MiInventario.AgregarProducto();
+                bool R = await MiInventario.AddProducto();
 
                 return R;
             }
@@ -54,12 +54,12 @@ namespace MueblesCormar.ViewModels
         }
 
         //función para actualizar usuario
-        public async Task<bool> ActualizarProducto(int idProducto,
-                                                  string pNombre,
-                                                  int pCantidad,
-                                                  string pDescripcion,
-                                                  string pImagenProducto,
-                                                  int pPrecio)
+        public async Task<bool> UpdateProducto(int idProducto,
+                                               string pNombre,
+                                               int pCantidad,
+                                               string pDescripcion,
+                                               string pImagenProducto,
+                                               int pPrecio)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -74,7 +74,7 @@ namespace MueblesCormar.ViewModels
                 MiInventarioDTO.PrecioUnidad = pPrecio;
 
 
-                bool R = await MiInventarioDTO.ActualizarProducto(idProducto);
+                bool R = await MiInventarioDTO.UpdateProducto(idProducto);
 
                 return R;
             }

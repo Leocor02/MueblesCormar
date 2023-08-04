@@ -103,7 +103,7 @@ namespace MueblesCormar.Models.DTOs
             }
         }
         
-        public async Task<bool> ActualizarProducto(int idProducto)
+        public async Task<bool> UpdateProducto(int idProducto)
         {
             try
             {

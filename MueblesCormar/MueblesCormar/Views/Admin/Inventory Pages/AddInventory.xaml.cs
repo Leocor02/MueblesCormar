@@ -28,11 +28,11 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
 
             if (answer)
             {
-                bool R = await viewModel.AgregarNuevoProducto(TxtNombre.Text.Trim(),
-                                                              Int32.Parse(TxtCantidad.Text.Trim()),
-                                                              TxtDescripcion.Text.Trim(),
-                                                              TxtProductoImagen.Text.Trim(),
-                                                              Int32.Parse(TxtPrecio.Text.Trim()));
+                bool R = await viewModel.AddProducto(TxtNombre.Text.Trim(),
+                                                     Int32.Parse(TxtCantidad.Text.Trim()),
+                                                     TxtDescripcion.Text.Trim(),
+                                                     TxtProductoImagen.Text.Trim(),
+                                                     Int32.Parse(TxtPrecio.Text.Trim()));
 
                 if (R)
                 {

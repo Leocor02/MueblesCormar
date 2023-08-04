@@ -78,7 +78,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 if (answer)
                 {
 
-                    bool R = await viewmodel.AgregarNuevoUsuario(TxtNombre.Text.Trim(),
+                    bool R = await viewmodel.AddUsuario(TxtNombre.Text.Trim(),
                                                      TxtEmail.Text.Trim(),
                                                      TxtContrasennia.Text.Trim(),
                                                      TxtTelefono.Text.Trim(),

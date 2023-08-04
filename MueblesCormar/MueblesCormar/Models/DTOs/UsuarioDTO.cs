@@ -65,7 +65,7 @@ namespace MueblesCormar.Models.DTOs
 
 
         //función para actualizar la info de un usuario
-        public async Task<bool> ActualizarUsuario(int idUsuario)
+        public async Task<bool> UpdateUsuario(int idUsuario)
         {
             try
             {

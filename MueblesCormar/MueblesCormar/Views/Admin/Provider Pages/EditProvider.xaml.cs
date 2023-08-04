@@ -46,7 +46,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
             if (answer)
             {
 
-                bool R = await viewModel.ActualizarProveedor(
+                bool R = await viewModel.UpdateProveedor(
                 idProveedorVM,
                 TxtNombre.Text.Trim(),
                 TxtDireccion.Text.Trim());
