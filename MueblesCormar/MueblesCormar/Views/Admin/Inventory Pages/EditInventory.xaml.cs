@@ -59,7 +59,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 Int32.Parse(TxtCantidad.Text.Trim()),
                 TxtDescripcion.Text.Trim(),
                 TxtImagenProducto.Text.Trim(),
-                Int32.Parse(TxtPrecio.Text.Trim()));
+                Decimal.Parse(TxtPrecio.Text.Trim()));
 
                 if (R)
                 {

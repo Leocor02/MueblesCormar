@@ -80,9 +80,20 @@ namespace MueblesCormar.Views
                     await DisplayAlert("Error", ex.Message, "OK");
                     return;
                 }
-               
 
+                //if (GlobalObjects.GlobalUser.IdrolUsuario == 1)
+                //{
+                //    await Navigation.PushAsync(new AdminHomePage());
+                //}
+                //else if (GlobalObjects.GlobalUser.IdrolUsuario == 2)
+                //{
+                //    await Navigation.PushAsync(new EmployeeHomePage());
+                //}
                 await Navigation.PushAsync(new AdminHomePage());
+
+                TxtNombreUsuario.Text = "";
+                TxtContraseña.Text = "";
+
             }
             else
             {

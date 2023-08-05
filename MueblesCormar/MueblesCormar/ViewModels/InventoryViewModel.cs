@@ -59,7 +59,7 @@ namespace MueblesCormar.ViewModels
                                                int pCantidad,
                                                string pDescripcion,
                                                string pImagenProducto,
-                                               int pPrecio)
+                                               decimal pPrecio)
         {
             if (IsBusy) return false;
             IsBusy = true;

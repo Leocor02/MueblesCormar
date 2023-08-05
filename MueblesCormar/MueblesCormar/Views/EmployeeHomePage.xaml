@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MueblesCormar.Views.AdminHomePage"
-             Shell.NavBarIsVisible="False"
+             x:Class="MueblesCormar.Views.EmployeeHomePage"
+              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#C0C0C0">
     <ContentPage.Content>
@@ -21,7 +21,7 @@
                         </Trigger>
                     </Button.Triggers>
                 </Button>
-                
+
 
                 <Image Source="Logo" Margin="0,30,0,20"/>
 
@@ -31,8 +31,7 @@
                         <RowDefinition Height="65"/>
                         <RowDefinition Height="65"/>
                         <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
-                        <RowDefinition Height="65"/>
+                
                     </Grid.RowDefinitions>
 
                     <Button Grid.Row="0" 
@@ -53,7 +52,7 @@
                             </Trigger>
                         </Button.Triggers>
                     </Button>
-                    
+
 
                     <Button Grid.Row="1" 
                             x:Name="BtnProveedores"
@@ -76,26 +75,6 @@
                     
 
                     <Button Grid.Row="2" 
-                            x:Name="BtnEmpleados"
-                            Text="Empleados"
-                            FontSize="17" 
-                            CornerRadius="5"
-                            WidthRequest="220"
-                            HorizontalOptions="Center"
-                            BackgroundColor="#3B3B3C" TextColor="White"
-                            BorderWidth="2" BorderColor="#2399D4"
-                            Clicked="BtnEmpleados_Clicked">
-
-                        <Button.Triggers>
-                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
-                                <Setter Property="BackgroundColor" Value="#2399D4"/>
-                                <Setter Property="TextColor" Value="#D5CDCD"/>
-                            </Trigger>
-                        </Button.Triggers>
-                    </Button>
-                    
-
-                    <Button Grid.Row="3" 
                             x:Name="BtnProveedorInventario"
                             Text="Proveedores del inventario"
                             FontSize="17" 
@@ -113,28 +92,7 @@
                             </Trigger>
                         </Button.Triggers>
                     </Button>
-                    
 
-                    <Button Grid.Row="4" 
-                            x:Name="BtnBitacoras"
-                            Text="Bitácora"
-                            FontSize="17" 
-                            CornerRadius="5"
-                            WidthRequest="220"
-                            HorizontalOptions="Center"
-                            BackgroundColor="#3B3B3C" TextColor="White"
-                            BorderWidth="2" BorderColor="#2399D4">
-
-                        <Button.Triggers>
-                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
-                                <Setter Property="BackgroundColor" Value="#2399D4"/>
-                                <Setter Property="TextColor" Value="#D5CDCD"/>
-                            </Trigger>
-                        </Button.Triggers>
-                    </Button>
-
-                    
-                    
                 </Grid>
             </FlexLayout>
         </ScrollView>
