@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MueblesCormar.Views.Admin.Register_Pages.ShowRegister">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="Lista de Registros"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Padding="0,20,0,10"
+                FontSize="Title"
+                TextColor="White"/>
+
+                <ListView x:Name="LstRegistro" RowHeight="100" ItemTapped="LstRegistro_ItemTapped">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <TextCell Text="{Binding Fecha}"
+                                      Detail="{Binding Nota}"/>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

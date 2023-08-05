@@ -47,5 +47,10 @@ namespace MueblesCormar.Views
                 await Navigation.PopAsync();
             }
         }
+
+        private async void BtnRegistro_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterManagementPage());
+        }
     }
 }

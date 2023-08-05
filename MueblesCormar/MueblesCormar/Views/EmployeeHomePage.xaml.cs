@@ -16,5 +16,25 @@ namespace MueblesCormar.Views
         {
             InitializeComponent();
         }
+
+        private void BtnCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnInventario_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnProveedores_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnProveedorInventario_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
