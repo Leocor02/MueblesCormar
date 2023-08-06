@@ -20,6 +20,7 @@ namespace MueblesCormar.Views.Admin.Register_Pages
         public ShowRegister(bool isDelete)
         {
             InitializeComponent();
+            BindingContext = viewModel = new RegisterViewModel();
             CargaListaRegistro();
             isDeletePage = isDelete;
         }

@@ -31,13 +31,6 @@ namespace MueblesCormar.Views.Admin.Register_Pages
                 return;
             }
 
-            if (datePicker.Date < DateTime.Now)
-            {
-                await DisplayAlert("Error", "La fecha de registro debe ser el mismo día o un dia siguiente a la fecha actual", "Ok");
-                return;
-            }
-
-
             //confirmación de la acción a realizar
             var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
 
