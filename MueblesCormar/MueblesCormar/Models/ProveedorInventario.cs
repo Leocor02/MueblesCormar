@@ -17,5 +17,7 @@ namespace MueblesCormar.Models
 
         public virtual Inventario IdproductoNavigation { get; set; } = null!;
         public virtual Proveedor IdproveedorNavigation { get; set; } = null!;
+
+
     }
 }

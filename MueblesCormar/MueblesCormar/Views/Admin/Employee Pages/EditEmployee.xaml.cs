@@ -51,7 +51,6 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
 
             if (answer)
             {
-
                 bool R = await viewModel.UpdateUsuario(
                 idUsuarioVM,
                 TxtNombre.Text.Trim(),

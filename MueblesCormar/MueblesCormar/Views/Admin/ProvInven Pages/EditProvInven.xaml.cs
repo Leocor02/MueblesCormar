@@ -30,16 +30,18 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
             ProveedorInventarioDTO proveedorinventariodto = await viewModel.GetDataProveedorInventario(idProveedorInventario);
             TxtIdProveedor.Text = Convert.ToString(proveedorinventariodto.Idproveedor);
             TxtIdProducto.Text = Convert.ToString(proveedorinventariodto.Idproducto);
-            TxtNombreProveedor.Text = proveedorinventariodto.NombreProveedor;
-            TxtNombreProducto.Text = proveedorinventariodto.NombreProducto;
+            //TxtNombreProveedor.Text = proveedorinventariodto.NombreProveedor;
+            //TxtNombreProducto.Text = proveedorinventariodto.NombreProducto;
         }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
         {
             if (TxtIdProveedor.Text == null || string.IsNullOrEmpty(TxtIdProveedor.Text.Trim()) ||
-                TxtIdProducto.Text == null || string.IsNullOrEmpty(TxtIdProducto.Text.Trim()) ||
-                TxtNombreProveedor.Text == null || string.IsNullOrEmpty(TxtNombreProveedor.Text.Trim()) ||
-                TxtNombreProducto.Text == null || string.IsNullOrEmpty(TxtNombreProducto.Text.Trim()))
+                TxtIdProducto.Text == null || string.IsNullOrEmpty(TxtIdProducto.Text.Trim()) 
+                //||
+                //TxtNombreProveedor.Text == null || string.IsNullOrEmpty(TxtNombreProveedor.Text.Trim()) ||
+                //TxtNombreProducto.Text == null || string.IsNullOrEmpty(TxtNombreProducto.Text.Trim())
+                )
             {
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
                 return;
@@ -55,7 +57,8 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
                 Int32.Parse(TxtIdProveedor.Text.Trim()),
                 Int32.Parse(TxtIdProducto.Text.Trim()),
                 TxtNombreProveedor.Text.Trim(),
-                TxtNombreProducto.Text.Trim());
+                TxtNombreProducto.Text.Trim()
+                );
 
                 if (R)
                 {

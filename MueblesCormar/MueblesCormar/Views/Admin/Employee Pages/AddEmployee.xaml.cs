@@ -71,7 +71,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             if (ValidacionDatosUsuario())
             {
 
-                int rolID = 2;//id rol empleado
+                int rolID = 1;//id rol empleado
 
                 var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este usuario?", "Si", "No");
 

@@ -19,8 +19,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
 
-                            <ImageCell Text="{Binding NombreProducto}"
-                                       Detail="{Binding Idproducto}"/>
+                            <ImageCell Text="{Binding NombreProveedor}" Detail="{Binding NombreProducto}"/>
 
                         </DataTemplate>
                     </ListView.ItemTemplate>

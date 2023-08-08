@@ -26,7 +26,7 @@
 
             <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" FontSize="22"
                     CornerRadius="20" BackgroundColor="#3B3B3C"
-                    BorderWidth="2" BorderColor="#2399D4" TextColor="White"
+                    BorderWidth="2" BorderColor="#2399D4" TextColor="White" Margin="0,0,0,10"
                     Clicked="BtnIniciarSesion_Clicked">
 
                 <Button.Triggers>

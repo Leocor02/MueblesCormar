@@ -79,8 +79,7 @@ namespace MueblesCormar.Views
         {
             if (ValidacionDatosUsuario())
             {
-
-                int rolID = 2;//id rol cliente
+                int rolID = 1;//id rol cliente
 
                 //confirmación de la acción a realizar
                 var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este usuario?", "Si", "No");
@@ -88,10 +87,10 @@ namespace MueblesCormar.Views
                 if (answer)
                 {
                     bool R = await viewModel.AddUsuario(TxtNombre.Text.Trim(),
-                                                        TxtEmail.Text.Trim(),
-                                                        TxtContraseña.Text.Trim(),
-                                                        TxtTelefono.Text.Trim(),
-                                                        rolID);
+                                                            TxtEmail.Text.Trim(),
+                                                            TxtContraseña.Text.Trim(),
+                                                            TxtTelefono.Text.Trim(),
+                                                            rolID);
                     if (R)
                     {
                         await DisplayAlert("ÉXITO", "Usuario agregado", "OK");
@@ -103,8 +102,6 @@ namespace MueblesCormar.Views
                     }
                 }
             }
-
-           
         }
     }
 }

@@ -111,7 +111,6 @@ namespace MueblesCormar.Models.DTOs
             {
                 string RouteSufix = string.Format("Usuarios/GetDataEmpleado?idUsuario={0}", idUser);
                 
-
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);
