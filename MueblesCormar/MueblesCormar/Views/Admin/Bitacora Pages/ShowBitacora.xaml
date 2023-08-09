@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MueblesCormar.Views.Admin.Bitacora_Pages.ShowBitacora">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Lista de Bitácoras"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Padding="0,20,0,10"
+                FontSize="Title"
+                TextColor="White"/>
+
+
+            <ListView x:Name="LstBitacora" RowHeight="100" ItemTapped="LstBitacora_ItemTapped">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ImageCell Text="{Binding Accion}"
+                                       Detail="{Binding Fecha}"/>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -4,18 +4,18 @@
              x:Class="MueblesCormar.Views.AppLoginPage"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#3B3B3C">
+             BackgroundImageSource="AppBackground">
     <ContentPage.Content>
-        <StackLayout Padding="50,0,50,0" VerticalOptions="Center">
+        <StackLayout Padding="50,0,50,15" VerticalOptions="Center">
 
             <Label Text="Muebles Cormar" FontSize="Title" HorizontalOptions="Center" TextColor="White" Padding="0,0,0,25"/>
 
             <Image Source="LogoUsuario"/>
 
-            <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#D5CDCD" PlaceholderColor="#D5CDCD" Margin="0,25,0,0"/>
+            <Entry x:Name="TxtNombreUsuario" Placeholder="Email" FontSize="25" Keyboard="Email" TextColor="#FFFFFF" PlaceholderColor="#FFFFFF" Margin="0,25,0,0"/>
 
             <StackLayout Orientation="Horizontal" Spacing="20" VerticalOptions="FillAndExpand" Padding="0,10,0,30">
-                <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="#D5CDCD" PlaceholderColor="#D5CDCD" WidthRequest="210"/>
+                <Entry x:Name="TxtContraseña" Placeholder="Contraseña" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="#FFFFFF" PlaceholderColor="#FFFFFF" WidthRequest="210"/>
 
                 <StackLayout>
                     <Switch x:Name="SwMostrarContraseña" IsToggled="False" Toggled="CmdMostrarContraseña"/>

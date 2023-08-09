@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MueblesCormar.Views.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,24 +18,34 @@ namespace MueblesCormar.Views
             InitializeComponent();
         }
 
-        private void BtnCerrarSesion_Clicked(object sender, EventArgs e)
+        private async void BtnCerrarSesion_Clicked(object sender, EventArgs e)
         {
+            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere cerrar sesión?", "Si", "No");
 
+            if (answer)
+            {
+                await Navigation.PopAsync();
+            }
         }
 
-        private void BtnInventario_Clicked(object sender, EventArgs e)
+        private async void BtnInventario_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new InventoryManagementPage());
         }
 
-        private void BtnProveedores_Clicked(object sender, EventArgs e)
+        private async void BtnProveedores_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ProviderManagementPage());
         }
 
-        private void BtnProveedorInventario_Clicked(object sender, EventArgs e)
+        private async void BtnProveedorInventario_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new ProvInvenManagementPage());
+        }
 
+        private async void BtnRegistros_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterManagementPage());
         }
     }
 }

@@ -77,7 +77,7 @@ namespace MueblesCormar.Models
         {
             try
             {
-                string RouteSufix = string.Format("Usuarios/ValidarLogin?NombreUsuario={0}&ContraseniaUsuario={1}", 
+                string RouteSufix = string.Format("Usuarios/ValidarLogin?NombreUsuario={0}&ContraseniaUsuario={1}",
                                                   this.Email, this.Contraseña);
 
                 string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;

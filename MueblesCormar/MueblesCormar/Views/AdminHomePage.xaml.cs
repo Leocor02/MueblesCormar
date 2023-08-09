@@ -52,5 +52,10 @@ namespace MueblesCormar.Views
         {
             await Navigation.PushAsync(new RegisterManagementPage());
         }
+
+        private async void BtnBitacoras_Clicked(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
