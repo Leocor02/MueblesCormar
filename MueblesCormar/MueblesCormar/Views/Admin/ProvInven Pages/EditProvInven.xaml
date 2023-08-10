@@ -30,16 +30,34 @@
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
-                        BackgroundColor="#094AC1"
-                        Clicked="BtnEditar_Clicked"/>
+                        BackgroundColor="#3B3B3C"
+                        BorderWidth="2" BorderColor="#2399D4"
+                        Clicked="BtnEditar_Clicked">
+
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#2399D4"/>
+                            <Setter Property="TextColor" Value="#D5CDCD"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
 
                 <Button Grid.Row="0" Grid.Column="1" 
                         x:Name="BtnCancelar" Text="Cancelar" 
                         FontSize="17" CornerRadius="20" 
                         HeightRequest="50"
                         WidthRequest="50"
-                        BackgroundColor="#094AC1"
-                        Clicked="BtnCancelar_Clicked"/>
+                        BackgroundColor="#3B3B3C"
+                        BorderWidth="2" BorderColor="#2399D4"
+                        Clicked="BtnCancelar_Clicked">
+
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#2399D4"/>
+                            <Setter Property="TextColor" Value="#D5CDCD"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
 
             </Grid>
         </StackLayout>

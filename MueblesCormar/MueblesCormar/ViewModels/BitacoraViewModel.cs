@@ -44,33 +44,42 @@ namespace MueblesCormar.ViewModels
             }
         }
 
-        public async Task<bool> UpdateBitacora(int idBitacora, string pAccion, DateTime pFecha, int idUsuario)
-        {
-            if (IsBusy) return false;
-            IsBusy = true;
+        //public void EjecutarAccion(int tipoAccion, string pNombreTabla, Usuario pUsuario)
+        //{
+        //    string accion = "";
 
-            try
-            {
-                MiBitacora.Idbitacora = idBitacora;
-                MiBitacora.Accion = pAccion;
-                MiBitacora.Fecha = pFecha;
-                MiBitacora.Idusuario = idUsuario;
+        //    switch (tipoAccion)
+        //    {
+        //        case 1:
+        //            accion = "se insertó en la tabla: " + pNombreTabla;
+        //            break;
+        //        case 2:
+        //            accion = "se modificó en la tabla: " + pNombreTabla;
+        //            break;
+        //        case 3:
+        //            accion = "se eliminó en la tabla: " + pNombreTabla;
+        //            break;
+        //        case 4:
+        //            accion = "se activó un dato en la tabla: " + pNombreTabla;
+        //            break;
+        //    }
 
-                bool R = await MiBitacora.UpdateBitacora(idBitacora);
+        //    string usuario = "";
 
-                return R;
-            }
-            catch (Exception)
-            {
-                return false;
-                throw;
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+        //    switch (pUsuario.IdrolUsuario)
+        //    {
+        //        case 1:
+        //            usuario = "Admin";
+        //            break;
+        //        case 2:
+        //            usuario = pUsuario.Nombre;
+        //            break;
 
-        }
+        //    }
+
+
+        //    InsertarEnBitacora(accion, pFecha, usuario);
+        //}
 
         public async Task<Bitacora> GetDataBitacora(int idBitacora)
         {
@@ -128,28 +137,6 @@ namespace MueblesCormar.ViewModels
                 finally { IsBusy = false; }
 
             }
-
-        }
-
-        public async Task<bool> DeleteBitacora(int idBitacora)
-        {
-            if (IsBusy) return false;
-            IsBusy = true;
-
-            try
-            {
-                bool R = await MiBitacora.DeleteBitacora(idBitacora);
-
-                return R;
-
-            }
-            catch (Exception)
-            {
-                return false;
-                throw;
-            }
-            finally
-            { IsBusy = false; }
 
         }
 

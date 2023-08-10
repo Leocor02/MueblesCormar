@@ -17,15 +17,11 @@ namespace MueblesCormar.Views.Admin.Bitacora_Pages
     public partial class ShowBitacora : ContentPage
     {
         BitacoraViewModel vm;
-        bool isEditPage { get; set; }
-        bool isDeletePage { get; set; }
-        public ShowBitacora(bool isEdit, bool isDelete)
+        public ShowBitacora()
         {
             InitializeComponent();
             BindingContext = vm = new BitacoraViewModel();
             CargaListaBitacora();
-            isEditPage = isEdit;
-            isDeletePage = isDelete;
         }
 
         private async void CargaListaBitacora()
@@ -33,48 +29,8 @@ namespace MueblesCormar.Views.Admin.Bitacora_Pages
             LstBitacora.ItemsSource = await vm.GetFullListaBitacora();
         }
 
-        private async void DeleteBitacora(int idBitacora)
-        {
+       
 
-            bool response = await vm.DeleteBitacora(idBitacora);
-
-            if (response)
-            {
-                await DisplayAlert("Exito", "Bitácora Eliminada correctamente", "OK");
-
-                await Navigation.PopAsync();
-            }
-            else
-            {
-                await DisplayAlert("Error", "Hubo un error al intentar eliminar la bitácora", "OK");
-            }
-
-        }
-
-        private async void LstBitacora_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (isEditPage || isDeletePage)
-            {
-                var selectedItem = e.Item as Bitacora;
-
-                if (selectedItem != null)
-                {
-                    if (isDeletePage)
-                    {
-                        var answer = await DisplayAlert("Confirmacion requerida!", "seguro que deseas eliminar esta bitácora?", "Si", "No");
-
-                        if (answer)
-                        {
-                            DeleteBitacora(selectedItem.Idbitacora);
-                        }
-                    }
-
-                    if (isEditPage)
-                    {
-                        await Navigation.PushAsync(new EditBitacora(selectedItem.Idbitacora));
-                    }
-                }
-            }
-        }
+        
     }
 }

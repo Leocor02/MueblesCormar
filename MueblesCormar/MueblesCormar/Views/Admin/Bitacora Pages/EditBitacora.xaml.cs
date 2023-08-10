@@ -40,36 +40,7 @@ namespace MueblesCormar.Views.Admin.Bitacora_Pages
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
         {
-            if (TxtAccion.Text == null || string.IsNullOrEmpty(TxtAccion.Text.Trim()) ||
-              datePicker.Date.ToString() == null || string.IsNullOrEmpty(datePicker.Date.ToString()) ||
-              TxtIdUsuario.Text == null || string.IsNullOrEmpty(TxtIdUsuario.Text.Trim()))
-            {
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
-                return;
-            }
-
-            //confirmación de la acción a realizar
-            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere editar a esta bitácora?", "Si", "No");
-
-            if (answer)
-            {
-
-                bool R = await viewModel.UpdateBitacora(
-                idBitacoraVM,
-                TxtAccion.Text.Trim(),
-                DateTime.Parse(datePicker.Date.ToString()),
-                Int32.Parse(TxtIdUsuario.Text.Trim()));
-
-                if (R)
-                {
-                    await DisplayAlert("Exito!", "Bitácora modificada correctamente", "OK");
-                    await Navigation.PopAsync();
-                }
-                else
-                {
-                    await DisplayAlert("Error", "Hubo un error al intentar modificar la bitácora", "OK");
-                }
-            }
+          
         }
     }
 }

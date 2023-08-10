@@ -12,7 +12,7 @@
                 TextColor="White"/>
 
 
-            <ListView x:Name="LstBitacora" RowHeight="100" ItemTapped="LstBitacora_ItemTapped">
+            <ListView x:Name="LstBitacora" RowHeight="100" >
 
                 <ListView.ItemTemplate>
                     <DataTemplate>

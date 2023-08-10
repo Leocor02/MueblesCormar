@@ -12,6 +12,7 @@
 
                 <Button x:Name="BtnCerrarSesion" Text="Cerrar Sesión"
                         BackgroundColor="#3B3B3C" TextColor="White" Margin="125,10,0,0"
+                        BorderWidth="2" BorderColor="#2399D4"
                         Clicked="BtnCerrarSesion_Clicked">
 
                     <Button.Triggers>

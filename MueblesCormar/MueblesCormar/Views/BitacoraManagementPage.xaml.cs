@@ -30,12 +30,12 @@ namespace MueblesCormar.Views
 
         private async void BtnModificarBitacora_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EditBitacora());
+           
         }
 
         private async void BtnEliminarBitacora_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ShowBitacora());
+           
         }
     }
 }
