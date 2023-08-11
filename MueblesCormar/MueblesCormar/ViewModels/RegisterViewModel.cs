@@ -15,6 +15,7 @@ namespace MueblesCormar.ViewModels
 
         public RegisterViewModel()
         {
+            MiRegistro = new Registro();
             MiRegistroDTO = new RegistroDTO();
         }
 

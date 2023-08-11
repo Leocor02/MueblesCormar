@@ -12,9 +12,7 @@
 
             <DatePicker x:Name="datePicker" MinimumDate="01,01,2023" MaximumDate="01,01,2024"/>
             <Entry x:Name="TxtNota" Placeholder="Descripción"/>
-            <Entry x:Name="TxtIdUsuario" Placeholder="ID del usuario"/>
-
-           
+            <Entry x:Name = "TxtIdUsuario" Placeholder = "ID del usuario" />
 
             <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 

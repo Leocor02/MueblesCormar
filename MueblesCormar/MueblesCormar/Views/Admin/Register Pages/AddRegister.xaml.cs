@@ -37,7 +37,7 @@ namespace MueblesCormar.Views.Admin.Register_Pages
             if (answer)
             {
                 bool R = await viewModel.AddRegistro(datePicker.Date, 
-                                                     TxtNota.Text.Trim(), 
+                                                     TxtNota.Text.Trim(),
                                                      Int32.Parse(TxtIdUsuario.Text.Trim()));
                 if (R)
                 {
@@ -79,6 +79,7 @@ namespace MueblesCormar.Views.Admin.Register_Pages
 
 
 //           Copiar y pegar al otro lado
+
 //           < Entry x: Name = "TxtIdDetalleRegistro" Placeholder = "Id Detalle Registro" Keyboard = "Numeric" />
 //           < Entry x: Name = "TxtCantidad" Placeholder = "Cantidad" Keyboard = "Numeric" />
 //           < Entry x: Name = "TxtPrecioUnidad" Placeholder = "Precio unidad" Keyboard = "Numeric" />

@@ -15,13 +15,21 @@
                 TextColor="White"/>
 
 
-                <ListView x:Name="LstEmpleado" RowHeight="100" ItemTapped="LstEmpleado_ItemTapped">
-
+                <ListView x:Name="LstEmpleado" RowHeight="140" ItemTapped="LstEmpleado_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-
-                            <TextCell Text="{Binding Nombre}" Detail="{Binding Email}"/>
-
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del Usuario" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Nombre}" ></Label> 
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Correo del Usuario" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Email}" ></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
 

@@ -31,14 +31,14 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 return;
             }
 
-                int rolID = 1;//id rol empleado
-
                 var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este usuario?", "Si", "No");
 
                 if (answer)
                 {
 
-                    bool R = await viewmodel.AddUsuario(TxtNombre.Text.Trim(),
+                int rolID = 1;//id rol empleado
+
+                bool R = await viewmodel.AddUsuario(TxtNombre.Text.Trim(),
                                                      TxtEmail.Text.Trim(),
                                                      TxtContrasennia.Text.Trim(),
                                                      TxtTelefono.Text.Trim(),
@@ -51,7 +51,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                     }
                     else
                     {
-                        await DisplayAlert("Error", "Hubo Un error al intentar Agregar el empleado", "OK");
+                        await DisplayAlert("Error", "Hubo Un error al intentar agregar el empleado", "OK");
                     }
                 }
             
