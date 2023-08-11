@@ -12,8 +12,7 @@
 
             <Entry x:Name="TxtIdProveedor" Placeholder="ID del proveedor"/>
             <Entry x:Name="TxtIdProducto" Placeholder="ID del producto"/>
-            <Entry x:Name="TxtNombreProveedor" Placeholder="Nombre del proveedor"/>
-            <Entry x:Name="TxtNombreProducto" Placeholder="Nombre del producto"/>
+            
 
             <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 

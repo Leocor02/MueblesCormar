@@ -19,11 +19,10 @@
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
-
-                            <ImageCell Text="{Binding Nombre}"
+                            
+                            <ImageCell TextColor="Green" Text="{Binding Nombre}"
                                        Detail="{Binding Descripcion}"
                                        ImageSource="{Binding ImagenProducto}"/>
-
                         </DataTemplate>
                     </ListView.ItemTemplate>
 

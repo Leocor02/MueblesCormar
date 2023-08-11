@@ -48,6 +48,13 @@ namespace MueblesCormar.Models
                 request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
                 request.AddHeader(contentType, mimetype);
 
+                ////Con esto lo que se logra es quitar del json que se envía al api todos los campos que tengan
+                ////null en sus datos.
+                ////Con esto logramos que las complicaciones como los navigation se eliminen del json
+                ////y a nivel del api no pida como requisito el dato o navegación
+                //var settings = new JsonSerializerSettings();
+                //settings.NullValueHandling = NullValueHandling.Ignore;
+
                 //tenemos que serializar la clase para poderla enviar al api
                 string SerialClass = JsonConvert.SerializeObject(this);
 

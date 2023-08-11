@@ -23,9 +23,11 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
             if (TxtIdProveedor.Text == null || string.IsNullOrEmpty(TxtIdProveedor.Text.Trim()) ||
-                TxtIdProducto.Text == null || string.IsNullOrEmpty(TxtIdProducto.Text.Trim()) ||
-                TxtNombreProveedor.Text == null || string.IsNullOrEmpty(TxtNombreProveedor.Text.Trim()) ||
-                TxtNombreProducto.Text == null || string.IsNullOrEmpty(TxtNombreProducto.Text.Trim()))
+                TxtIdProducto.Text == null || string.IsNullOrEmpty(TxtIdProducto.Text.Trim()) 
+                //||
+                //TxtNombreProveedor.Text == null || string.IsNullOrEmpty(TxtNombreProveedor.Text.Trim()) ||
+                //TxtNombreProducto.Text == null || string.IsNullOrEmpty(TxtNombreProducto.Text.Trim())
+                )
             {
 
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "Ok");
@@ -38,9 +40,10 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
             if (answer)
             {
                 bool R = await viewModel.AddProveedorInventario(Int32.Parse(TxtIdProveedor.Text.Trim()),
-                                                                Int32.Parse(TxtIdProducto.Text.Trim()),
-                                                                TxtNombreProveedor.Text.Trim(),
-                                                                TxtNombreProducto.Text.Trim()
+                                                                Int32.Parse(TxtIdProducto.Text.Trim())
+                                                                //,
+                                                                //TxtNombreProveedor.Text.Trim(),
+                                                                //TxtNombreProducto.Text.Trim()
                                                                 );
 
 
@@ -62,3 +65,6 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
         }
     }
 }
+
+//< Entry x: Name = "TxtNombreProveedor" Placeholder = "Nombre del proveedor" />
+//            < Entry x: Name = "TxtNombreProducto" Placeholder = "Nombre del producto" />

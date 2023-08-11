@@ -36,9 +36,9 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 if (answer)
                 {
 
-                int rolID = 1;//id rol empleado
+                    int rolID = 2;//id rol empleado
 
-                bool R = await viewmodel.AddUsuario(TxtNombre.Text.Trim(),
+                    bool R = await viewmodel.AddUsuario(TxtNombre.Text.Trim(),
                                                      TxtEmail.Text.Trim(),
                                                      TxtContrasennia.Text.Trim(),
                                                      TxtTelefono.Text.Trim(),

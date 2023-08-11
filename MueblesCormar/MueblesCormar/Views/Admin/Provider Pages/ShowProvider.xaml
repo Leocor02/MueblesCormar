@@ -13,18 +13,22 @@
                 FontSize="Title"
                 TextColor="White"/>
 
-                <ListView x:Name="LstProveedor" RowHeight="140" ItemTapped="LstProveedor_ItemTapped">
+                <ListView x:Name="LstProveedor" RowHeight="180" ItemTapped="LstProveedor_ItemTapped">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout>
                                     <StackLayout>
-                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del proveedor" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="ID del proveedor" TextColor="Green" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Idproveedor}" ></Label>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del proveedor" TextColor="Green" ></Label>
                                         <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Nombre}" ></Label>
                                     </StackLayout>
                                     <StackLayout>
-                                        <Label FontSize="15" Padding="10,0,0,0" Text="Dirección del proveedor" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Dirección del proveedor" TextColor="Green" ></Label>
                                         <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Direccion}" ></Label>
                                     </StackLayout>
                                 </StackLayout>

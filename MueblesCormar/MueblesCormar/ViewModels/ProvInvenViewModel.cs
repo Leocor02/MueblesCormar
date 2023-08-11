@@ -20,9 +20,11 @@ namespace MueblesCormar.ViewModels
         }
 
         public async Task<bool> AddProveedorInventario(int pIdProveedor,
-                                                       int pIdProducto,
-                                                       string pNombreProveedor,
-                                                       string pNombreProducto)
+                                                       int pIdProducto
+            //                                         ,
+            //                                         string pNombreProveedor,
+            //                                         string pNombreProducto
+            )
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -31,11 +33,11 @@ namespace MueblesCormar.ViewModels
             {
                 MiProveedorInventarioDTO.Idproveedor = pIdProveedor;
                 MiProveedorInventarioDTO.Idproducto = pIdProducto;
-                MiProveedorInventarioDTO.NombreProveedor = pNombreProveedor;
-                MiProveedorInventarioDTO.NombreProducto = pNombreProducto;
+                //MiProveedorInventarioDTO.NombreProveedor = pNombreProveedor;
+                //MiProveedorInventarioDTO.NombreProducto = pNombreProducto;
 
 
-                bool R = await MiProveedorInventarioDTO.AddProveedorInventario();
+                bool R = await MiProveedorInventario.AddProveedorInventario();
 
                 return R;
             }

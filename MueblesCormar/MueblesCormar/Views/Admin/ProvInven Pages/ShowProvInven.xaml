@@ -20,11 +20,11 @@
                             <ViewCell>
                                 <StackLayout>
                                     <StackLayout>
-                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del proveedor" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del proveedor" TextColor="Green" ></Label>
                                         <Label FontSize="15" Padding="10,0,0,0" Text="{Binding NombreProveedor}" ></Label>
                                     </StackLayout>
                                     <StackLayout>
-                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del producto" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nombre del producto" TextColor="Green" ></Label>
                                         <Label FontSize="15" Padding="10,0,0,0" Text="{Binding NombreProducto}" ></Label>
                                     </StackLayout>
                                 </StackLayout>
