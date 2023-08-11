@@ -32,7 +32,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             UsuarioDTO usuariodto = await viewModel.GetDataEmpleado(idUsuario);
             TxtNombre.Text = usuariodto.Nombre;
             TxtEmail.Text = usuariodto.Email;
-            TxtContrasennia.Text = usuariodto.Contrasennia;
+            //TxtContrasennia.Text = usuariodto.Contrasennia;
             TxtTelefono.Text = usuariodto.Telefono;
         }
 
@@ -40,7 +40,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
         {
             if (TxtNombre.Text == null || string.IsNullOrEmpty(TxtNombre.Text.Trim()) ||
                 TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
-                TxtContrasennia.Text == null || string.IsNullOrEmpty(TxtContrasennia.Text.Trim()) ||
+                //TxtContrasennia.Text == null || string.IsNullOrEmpty(TxtContrasennia.Text.Trim()) ||
                 TxtTelefono.Text == null || string.IsNullOrEmpty(TxtTelefono.Text.Trim()))
             {
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
@@ -55,7 +55,6 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 idUsuarioVM,
                 TxtNombre.Text.Trim(),
                 TxtEmail.Text.Trim(),
-                TxtContrasennia.Text.Trim(),
                 TxtTelefono.Text.Trim());
 
                 if (R)

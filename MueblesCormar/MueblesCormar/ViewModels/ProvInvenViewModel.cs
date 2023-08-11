@@ -20,9 +20,9 @@ namespace MueblesCormar.ViewModels
         }
 
         public async Task<bool> AddProveedorInventario(int pIdProveedor,
-                                                                int pIdProducto,
-                                                                string pNombreProveedor,
-                                                                string pNombreProducto)
+                                                       int pIdProducto,
+                                                       string pNombreProveedor,
+                                                       string pNombreProducto)
         {
             if (IsBusy) return false;
             IsBusy = true;

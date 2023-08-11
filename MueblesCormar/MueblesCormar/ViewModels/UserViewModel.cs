@@ -72,10 +72,10 @@ namespace MueblesCormar.ViewModels
 
         //función para agregar usuario
         public async Task<bool> AddUsuario(string pNombre,
-                                                    string pEmail,
-                                                    string pContraseña,
-                                                    string pTelefono,
-                                                    int rolID)
+                                           string pEmail,
+                                           string pContraseña,
+                                           string pTelefono,
+                                           int rolID)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -216,7 +216,7 @@ namespace MueblesCormar.ViewModels
         public async Task<bool> UpdateUsuario(int idUsuario, 
                                               string pNombre, 
                                               string pEmail, 
-                                              string pContrasennia, 
+                                              //string pContrasennia, 
                                               string pTelefono)
         {
             if (IsBusy) return false;
@@ -227,7 +227,7 @@ namespace MueblesCormar.ViewModels
                 MiUsuarioDTO.Idusuario = idUsuario;
                 MiUsuarioDTO.Nombre = pNombre;
                 MiUsuarioDTO.Email = pEmail;
-                MiUsuarioDTO.Contrasennia = pContrasennia;
+                //MiUsuarioDTO.Contrasennia = pContrasennia;
                 MiUsuarioDTO.Telefono = pTelefono;
 
 

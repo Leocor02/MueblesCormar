@@ -14,6 +14,8 @@
             <Entry x:Name="TxtNota" Placeholder="Descripción"/>
             <Entry x:Name="TxtIdUsuario" Placeholder="ID del usuario"/>
 
+           
+
             <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,40,0,0">
 
                 <Grid.RowDefinitions>

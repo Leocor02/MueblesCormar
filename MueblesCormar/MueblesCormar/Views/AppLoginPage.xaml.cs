@@ -59,8 +59,6 @@ namespace MueblesCormar.Views
 
                     throw;
                 }
-
-
             }
             else
             {

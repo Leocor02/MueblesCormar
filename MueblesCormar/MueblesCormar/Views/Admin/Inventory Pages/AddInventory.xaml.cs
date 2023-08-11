@@ -23,6 +23,15 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
 
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
+            if (TxtNombre.Text == null || string.IsNullOrEmpty(TxtNombre.Text.Trim()) ||
+               TxtCantidad.Text == null || string.IsNullOrEmpty(TxtCantidad.Text.Trim()) ||
+               TxtDescripcion.Text == null || string.IsNullOrEmpty(TxtDescripcion.Text.Trim()) ||
+               TxtProductoImagen.Text == null || string.IsNullOrEmpty(TxtProductoImagen.Text.Trim()) ||
+               TxtPrecio.Text == null || string.IsNullOrEmpty(TxtPrecio.Text.Trim()))
+            {
+                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
+                return;
+            }
             //confirmación de la acción a realizar
             var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
 

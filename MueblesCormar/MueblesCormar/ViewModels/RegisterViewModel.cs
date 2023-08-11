@@ -10,8 +10,8 @@ namespace MueblesCormar.ViewModels
 {
     public class RegisterViewModel : BaseViewModel
     {
+        public Registro MiRegistro { get; set; }
         public RegistroDTO MiRegistroDTO { get; set; }
-
 
         public RegisterViewModel()
         {
@@ -20,18 +20,36 @@ namespace MueblesCormar.ViewModels
 
         public async Task<bool> AddRegistro(DateTime pFecha,
                                             string pNota,
-                                            int pIdUsuario)
+                                            int pIdUsuario
+                                            //,
+                                            //int pIddetalleRegistro,
+                                            //int pCantidad,
+                                            //decimal pPrecioUnidad,
+                                            //decimal pSubtotal,
+                                            //decimal pImpuestos,
+                                            //decimal pTotal,
+                                            //int pIdregistro,
+                                            //int pIdproducto
+                                            )
         {
             if (IsBusy) return false;
             IsBusy = true;
 
             try
             {
-                MiRegistroDTO.Fecha = pFecha;
-                MiRegistroDTO.Nota = pNota;
-                MiRegistroDTO.Idusuario = pIdUsuario;
+                MiRegistro.Fecha = pFecha;
+                MiRegistro.Nota = pNota;
+                MiRegistro.Idusuario = pIdUsuario;
+                //MiRegistro.IddetalleRegistro = pIddetalleRegistro;
+                //MiRegistro.Cantidad = pCantidad;
+                //MiRegistro.PrecioUnidad = pPrecioUnidad;
+                //MiRegistro.Subtotal = pSubtotal;
+                //MiRegistro.Impuestos = pImpuestos;
+                //MiRegistro.Total = pTotal;
+                //MiRegistro.Idregistro = pIdregistro;
+                //MiRegistro.Idproducto = pIdproducto;
 
-                bool R = await MiRegistroDTO.AddRegistro();
+                bool R = await MiRegistro.AddRegistro();
 
                 return R;
             }

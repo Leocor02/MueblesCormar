@@ -11,6 +11,10 @@ namespace MueblesCormar.Models
 {
     public class ProveedorInventario
     {
+        public RestRequest request { get; set; }
+        const string mimetype = "application/json";
+        const string contentType = "Content-Type"; 
+
         public int IdproveedorInventario { get; set; }
         public int Idproveedor { get; set; }
         public int Idproducto { get; set; }
@@ -18,6 +22,6 @@ namespace MueblesCormar.Models
         public virtual Inventario IdproductoNavigation { get; set; } = null!;
         public virtual Proveedor IdproveedorNavigation { get; set; } = null!;
 
-
+       
     }
 }

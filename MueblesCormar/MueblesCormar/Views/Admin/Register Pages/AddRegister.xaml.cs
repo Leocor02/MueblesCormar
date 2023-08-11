@@ -24,7 +24,7 @@ namespace MueblesCormar.Views.Admin.Register_Pages
         {
             if (datePicker.Date.ToString() == null || string.IsNullOrEmpty(datePicker.Date.ToString()) ||
                 TxtNota.Text == null || string.IsNullOrEmpty(TxtNota.Text.Trim()) ||
-                TxtIdUsuario == null || string.IsNullOrEmpty(TxtIdUsuario.Text.Trim()))
+                TxtIdUsuario.Text == null || string.IsNullOrEmpty(TxtIdUsuario.Text.Trim()))
             {
 
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "Ok");
@@ -57,3 +57,33 @@ namespace MueblesCormar.Views.Admin.Register_Pages
         }
     }
 }
+//Pegar en el btnAgregar
+//TxtIdDetalleRegistro.Text == null || string.IsNullOrEmpty(TxtIdDetalleRegistro.Text.Trim()) ||
+//TxtCantidad.Text == null || string.IsNullOrEmpty(TxtCantidad.Text.Trim()) ||
+//TxtPrecioUnidad.Text == null || string.IsNullOrEmpty(TxtPrecioUnidad.Text.Trim()) ||
+//TxtSubtotal.Text == null || string.IsNullOrEmpty(TxtSubtotal.Text.Trim()) ||
+//TxtImpuestos.Text == null || string.IsNullOrEmpty(TxtImpuestos.Text.Trim()) ||
+//TxtTotal.Text == null || string.IsNullOrEmpty(TxtTotal.Text.Trim()) ||
+//TxtIdRegistro.Text == null || string.IsNullOrEmpty(TxtIdRegistro.Text.Trim()) ||
+//TxtIdProducto.Text == null || string.IsNullOrEmpty(TxtIdProducto.Text.Trim()))
+
+//Pegarlo en el bool R = await viewModel.AddRegistro
+//TxtIdDetalleRegistro.Text.Trim(), 
+//    TxtCantidad.Text.Trim(), 
+//    TxtPrecioUnidad.Text.Trim(), 
+//    TxtSubtotal.Text.Trim(), 
+//    TxtImpuestos.Text.Trim(), 
+//    TxtTotal.Text.Trim(), 
+//    TxtIdRegistro.Text.Trim(),
+//    TxtIdProducto.Text.Trim();
+
+
+//           Copiar y pegar al otro lado
+//           < Entry x: Name = "TxtIdDetalleRegistro" Placeholder = "Id Detalle Registro" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtCantidad" Placeholder = "Cantidad" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtPrecioUnidad" Placeholder = "Precio unidad" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtSubtotal" Placeholder = "Subtotal" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtImpuestos" Placeholder = "Impuestos" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtTotal" Placeholder = "Total" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtIdRegistro" Placeholder = "Id Registro" Keyboard = "Numeric" />
+//           < Entry x: Name = "TxtIdProducto" Placeholder = "ID producto" Keyboard = "Numeric" />
