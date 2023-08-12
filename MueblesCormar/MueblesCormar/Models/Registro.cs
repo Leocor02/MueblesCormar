@@ -23,8 +23,8 @@ namespace MueblesCormar.Models
         public string Nota { get; set; } = null!;
         public int Idusuario { get; set; }
 
-        public virtual Usuario IdusuarioNavigation { get; set; } = null!;
-        //public virtual ICollection<DetalleRegistro> DetalleRegistros { get; set; }
+        public virtual Usuario? IdusuarioNavigation { get; set; } = null!;
+        public virtual ICollection<DetalleRegistro> DetalleRegistros { get; set; }
 
         public async Task<bool> AddRegistro()
         {

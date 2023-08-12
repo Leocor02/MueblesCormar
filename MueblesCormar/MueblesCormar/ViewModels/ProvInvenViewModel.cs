@@ -31,8 +31,8 @@ namespace MueblesCormar.ViewModels
 
             try
             {
-                MiProveedorInventarioDTO.Idproveedor = pIdProveedor;
-                MiProveedorInventarioDTO.Idproducto = pIdProducto;
+                MiProveedorInventario.Idproveedor = pIdProveedor;
+                MiProveedorInventario.Idproducto = pIdProducto;
                 //MiProveedorInventarioDTO.NombreProveedor = pNombreProveedor;
                 //MiProveedorInventarioDTO.NombreProducto = pNombreProducto;
 
