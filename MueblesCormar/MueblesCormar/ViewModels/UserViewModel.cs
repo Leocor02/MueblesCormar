@@ -215,8 +215,8 @@ namespace MueblesCormar.ViewModels
         //función para actualizar usuario
         public async Task<bool> UpdateUsuario(int idUsuario, 
                                               string pNombre, 
-                                              string pEmail, 
-                                              //string pContrasennia, 
+                                              string pEmail,
+                                              //string pContrasennia,
                                               string pTelefono)
         {
             if (IsBusy) return false;

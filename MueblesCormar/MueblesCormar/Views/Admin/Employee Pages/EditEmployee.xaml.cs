@@ -55,6 +55,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 idUsuarioVM,
                 TxtNombre.Text.Trim(),
                 TxtEmail.Text.Trim(),
+                //TxtContrasennia.Text.Trim(),
                 TxtTelefono.Text.Trim());
 
                 if (R)
@@ -75,3 +76,5 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
         }
     }
 }
+
+//< Entry x:Name = "TxtContrasennia" Placeholder = "Contraseña" IsPassword = "True" />
