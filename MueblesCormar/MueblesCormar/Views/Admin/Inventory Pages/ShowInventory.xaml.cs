@@ -16,6 +16,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
     public partial class ShowInventory : ContentPage
     {
         InventoryViewModel vm;
+        BitacoraViewModel bitacoraViewModel;
 
         bool isEditPage { get; set; }
         bool isDeletePage { get; set; }
@@ -23,6 +24,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
         {
             InitializeComponent();
             BindingContext = vm = new InventoryViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             CargaListaInventario();
             isEditPage = IsEdit;
             isDeletePage = IsDelete;
@@ -42,7 +44,15 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
             {
                 await DisplayAlert("Exito", "Producto eliminado correctamente", "OK");
 
-                await Navigation.PopAsync();
+                bool R = await bitacoraViewModel.AddBitacora(3, "Inventario", GlobalObjects.GlobalUser.Idusuario);
+                if (R)
+                {
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                }
             }
             else
             {

@@ -12,14 +12,25 @@
                 TextColor="White"/>
 
 
-            <ListView x:Name="LstBitacora" RowHeight="100" >
+            <ListView x:Name="LstBitacora" RowHeight="160" >
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-
-                        <ImageCell Text="{Binding Accion}"
-                                       Detail="{Binding Fecha}"/>
-
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout>
+                                    <Label FontSize="15" TextColor="Green" Padding="10,0,0,0" Text="{Binding Accion}" ></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label FontSize="15" Padding="10,0,0,0" Text="Fecha" TextColor="Green" ></Label>
+                                    <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Fecha}" ></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label FontSize="15" Padding="10,0,0,0" Text="ID del usuario" TextColor="Green" ></Label>
+                                    <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Idusuario}" ></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
 

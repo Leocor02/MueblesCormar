@@ -14,10 +14,12 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
     public partial class AddEmployee : ContentPage
     {
         UserViewModel viewmodel;
+        BitacoraViewModel bitacoraViewModel;
         public AddEmployee()
         {
             InitializeComponent();
             BindingContext = viewmodel = new UserViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
         }
 
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
@@ -47,7 +49,15 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                     if (R)
                     {
                         await DisplayAlert("Exito!", "Empleado agregado correctamente", "OK");
+                        R = await bitacoraViewModel.AddBitacora(1,"Empleado",GlobalObjects.GlobalUser.Idusuario);
+                      if (R)
+                      {
                         await Navigation.PopAsync();
+                      }
+                      else
+                      {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                      }
                     }
                     else
                     {

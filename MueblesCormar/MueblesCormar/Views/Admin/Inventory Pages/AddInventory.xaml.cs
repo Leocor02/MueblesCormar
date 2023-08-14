@@ -15,9 +15,11 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
     public partial class AddInventory : ContentPage
     {
         InventoryViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
         public AddInventory()
         {
             BindingContext = viewModel = new InventoryViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             InitializeComponent();
         }
 
@@ -46,7 +48,15 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 if (R)
                 {
                     await DisplayAlert("ÉXITO", "Producto agregado", "OK");
-                    await Navigation.PopAsync();
+                    R = await bitacoraViewModel.AddBitacora(1, "Inventario", GlobalObjects.GlobalUser.Idusuario);
+                    if (R)
+                    {
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                    }
                 }
                 else
                 {

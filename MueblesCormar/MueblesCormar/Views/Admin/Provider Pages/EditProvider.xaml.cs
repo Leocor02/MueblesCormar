@@ -15,12 +15,14 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
     public partial class EditProvider : ContentPage
     {
         ProviderViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
 
         public int idProveedorVM { get; set; }
         public EditProvider(int idProveedor)
         {
             InitializeComponent();
             BindingContext = viewModel = new ProviderViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             CargarDataProveedor(idProveedor);
             idProveedorVM = idProveedor;
         }
@@ -54,7 +56,15 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
                 if (R)
                 {
                     await DisplayAlert("ÉXITO", "Proveedor modificado correctamente", "Ok");
-                    await Navigation.PopAsync();
+                    R = await bitacoraViewModel.AddBitacora(2, "Proveedor", GlobalObjects.GlobalUser.Idusuario);
+                    if (R)
+                    {
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                    }
                 }
                 else
                 {

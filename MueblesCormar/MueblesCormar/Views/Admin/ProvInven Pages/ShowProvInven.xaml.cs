@@ -16,6 +16,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
     public partial class ShowProvInven : ContentPage
     {
         ProvInvenViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
 
         bool isEditPage { get; set; }
         bool isDeletePage { get; set; }
@@ -23,6 +24,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
         {
             InitializeComponent();
             BindingContext = viewModel = new ProvInvenViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             CargaListaProveedorInventario();
             isEditPage = isEdit;
             isDeletePage = isDelete;
@@ -42,7 +44,15 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
             {
                 await DisplayAlert("Exito", "Proveedor Eliminado correctamente", "OK");
 
-                await Navigation.PopAsync();
+                bool R = await bitacoraViewModel.AddBitacora(3, "Proveedor de inventario", GlobalObjects.GlobalUser.Idusuario);
+                if (R)
+                {
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                }
             }
             else
             {

@@ -15,12 +15,14 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
     public partial class ShowProvider : ContentPage
     {
         ProviderViewModel vm;
+        BitacoraViewModel bitacoraViewModel;
         bool isEditPage { get; set; }
         bool isDeletePage { get; set; }
         public ShowProvider(bool isEdit, bool isDelete)
         {
             InitializeComponent();
             BindingContext = vm = new ProviderViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             isEditPage = isEdit;
             isDeletePage = isDelete;
             CargaListaProveedor();
@@ -40,7 +42,15 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
             {
                 await DisplayAlert("Exito", "Proveedor Eliminado correctamente", "OK");
 
-                await Navigation.PopAsync();
+                bool R = await bitacoraViewModel.AddBitacora(3, "Proveedor", GlobalObjects.GlobalUser.Idusuario);
+                if (R)
+                {
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                }
             }
             else
             {

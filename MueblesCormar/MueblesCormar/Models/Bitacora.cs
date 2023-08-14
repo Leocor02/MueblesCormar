@@ -63,42 +63,25 @@ namespace MueblesCormar.Models
             }
         }
 
-        public void EjecutarAccion(int tipoAccion, string pNombreTabla, Usuario pUsuario)
+        public void EjecutarAccion(int tipoAccion, string pNombreTabla, int pUsuarioId)
         {
-            string accion = "";
+            this.Accion = "";
 
             switch (tipoAccion)
             {
                 case 1:
-                    accion = "se insertó en la tabla: " + pNombreTabla;
+                    this.Accion = "Se insertó en la tabla: " + pNombreTabla;
                     break;
                 case 2:
-                    accion = "se modificó en la tabla: " + pNombreTabla;
+                    this.Accion = "Se modificó en la tabla: " + pNombreTabla;
                     break;
                 case 3:
-                    accion = "se eliminó en la tabla: " + pNombreTabla;
-                    break;
-                case 4:
-                    accion = "se activó un dato en la tabla: " + pNombreTabla;
+                    this.Accion = "Se eliminó en la tabla: " + pNombreTabla;
                     break;
             }
 
-            string usuario = "";
-
-            switch (pUsuario.IdrolUsuario)
-            {
-                case 1:
-                    usuario = "Admin";
-                    break;
-                case 2:
-                    usuario = pUsuario.Nombre;
-                    break;
-
-            }
-
-            int idTipoUsuario = pUsuario.IdrolUsuario;
-
-            InsertarEnBitacora(accion, usuario, idTipoUsuario);
+            this.Idusuario = pUsuarioId;
+            this.Fecha = DateTime.Now;    
         }
 
         public async Task<Bitacora> GetDataBitacora(int idBitacora)

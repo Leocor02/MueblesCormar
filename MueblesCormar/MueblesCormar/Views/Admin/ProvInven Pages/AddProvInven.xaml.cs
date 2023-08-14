@@ -14,10 +14,12 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
     public partial class AddProvInven : ContentPage
     {
         ProvInvenViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
         public AddProvInven()
         {
             InitializeComponent();
             BindingContext = viewModel = new ProvInvenViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
         }
 
         private async void BtnAgregar_Clicked(object sender, EventArgs e)
@@ -50,7 +52,15 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
                 if (R)
                 {
                     await DisplayAlert("ÉXITO", "ProveedorInventario agregado", "OK");
-                    await Navigation.PopAsync();
+                    R = await bitacoraViewModel.AddBitacora(1, "Proveedor de inventario", GlobalObjects.GlobalUser.Idusuario);
+                    if (R)
+                    {
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                    }
                 }
                 else
                 {

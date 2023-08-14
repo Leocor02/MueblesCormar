@@ -16,6 +16,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
     public partial class ShowEmployee : ContentPage
     {
         UserViewModel vm;
+        BitacoraViewModel bitacoraViewModel;
 
         bool isEditPage { get; set; }
         bool isDeletePage { get; set; }
@@ -26,6 +27,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             isEditPage = isEdit;
             isDeletePage = isDelete;
             BindingContext = vm = new UserViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
 
             CargaListaEmpleado();
         }
@@ -42,7 +44,15 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             if (response)
             {
                 await DisplayAlert("ÉXITO", "Empleado eliminado correctamente", "OK");
-                await Navigation.PopAsync();
+                bool R = await bitacoraViewModel.AddBitacora(3, "Empleado", GlobalObjects.GlobalUser.Idusuario);
+                if (R)
+                {
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                }
             }
             else
             {

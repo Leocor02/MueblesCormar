@@ -17,12 +17,14 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
     public partial class EditEmployee : ContentPage
     {
         UserViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
         public int idUsuarioVM { get; set; }
         public EditEmployee(int idUsuario)
         {
             InitializeComponent();
             //se agrega el bindigcontext de la vista contra el viewModel
             BindingContext = viewModel = new UserViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             CargarDataUsuario(idUsuario);
             idUsuarioVM = idUsuario;
         }
@@ -61,7 +63,15 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 if (R)
                 {
                     await DisplayAlert("ÉXITO", "Usuario modificado correctamente", "Ok");
-                    await Navigation.PopAsync();
+                    R = await bitacoraViewModel.AddBitacora(2, "Empleado", GlobalObjects.GlobalUser.Idusuario);
+                    if (R)
+                    {
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                    }
                 }
                 else
                 {

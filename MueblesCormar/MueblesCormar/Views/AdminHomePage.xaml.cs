@@ -55,7 +55,8 @@ namespace MueblesCormar.Views
 
         private async void BtnBitacoras_Clicked(object sender, EventArgs e)
         {
-           
+            await Navigation.PushAsync(new BitacoraManagementPage());
         }
+    
     }
 }

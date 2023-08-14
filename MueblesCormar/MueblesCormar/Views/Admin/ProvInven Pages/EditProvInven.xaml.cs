@@ -16,11 +16,13 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
     public partial class EditProvInven : ContentPage
     {
         ProvInvenViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
         public int idProveedorInventarioVM { get; set; }
         public EditProvInven(int idProveedorInventario)
         {
             InitializeComponent();
             BindingContext = viewModel = new ProvInvenViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
             CargarDataProveedorInventario(idProveedorInventario);
             idProveedorInventarioVM = idProveedorInventario;
         }
@@ -61,7 +63,15 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
                 if (R)
                 {
                     await DisplayAlert("ÉXITO", "Proveedor modificado correctamente", "Ok");
-                    await Navigation.PopAsync();
+                    R = await bitacoraViewModel.AddBitacora(2, "Proveedor de inventario", GlobalObjects.GlobalUser.Idusuario);
+                    if (R)
+                    {
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                    }
                 }
                 else
                 {

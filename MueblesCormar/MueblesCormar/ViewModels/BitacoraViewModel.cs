@@ -16,20 +16,19 @@ namespace MueblesCormar.ViewModels
         {
             MiBitacora = new Bitacora();
         }
-        public async Task<bool> InsertarEnBitacora(string pAccion,
-                                                   DateTime pFecha,
-                                                   int IdUsuario)
+        public async Task<bool> AddBitacora(int tipoAccion,
+                                            string pNombreTabla,
+                                            int pUsuarioId
+                                            )
         {
             if (IsBusy) return false;
             IsBusy = true;
 
             try
             {
-                MiBitacora.Accion = pAccion;
-                MiBitacora.Fecha = pFecha;
-                MiBitacora.Idusuario = IdUsuario;
+                MiBitacora.EjecutarAccion(tipoAccion, pNombreTabla, pUsuarioId);
 
-                bool R = await MiBitacora.InsertarEnBitacora();
+                bool R = await MiBitacora.AddBitacora();
 
                 return R;
             }
@@ -43,43 +42,6 @@ namespace MueblesCormar.ViewModels
                 IsBusy = false;
             }
         }
-
-        //public void EjecutarAccion(int tipoAccion, string pNombreTabla, Usuario pUsuario)
-        //{
-        //    string accion = "";
-
-        //    switch (tipoAccion)
-        //    {
-        //        case 1:
-        //            accion = "se insertó en la tabla: " + pNombreTabla;
-        //            break;
-        //        case 2:
-        //            accion = "se modificó en la tabla: " + pNombreTabla;
-        //            break;
-        //        case 3:
-        //            accion = "se eliminó en la tabla: " + pNombreTabla;
-        //            break;
-        //        case 4:
-        //            accion = "se activó un dato en la tabla: " + pNombreTabla;
-        //            break;
-        //    }
-
-        //    string usuario = "";
-
-        //    switch (pUsuario.IdrolUsuario)
-        //    {
-        //        case 1:
-        //            usuario = "Admin";
-        //            break;
-        //        case 2:
-        //            usuario = pUsuario.Nombre;
-        //            break;
-
-        //    }
-
-
-        //    InsertarEnBitacora(accion, pFecha, usuario);
-        //}
 
         public async Task<Bitacora> GetDataBitacora(int idBitacora)
         {

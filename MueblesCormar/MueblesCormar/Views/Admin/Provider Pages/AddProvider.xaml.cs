@@ -14,10 +14,12 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
     public partial class AddProvider : ContentPage
     {
         ProviderViewModel viewModel;
+        BitacoraViewModel bitacoraViewModel;
         public AddProvider()
         {
             InitializeComponent();
             BindingContext = viewModel = new ProviderViewModel();
+            bitacoraViewModel = new BitacoraViewModel();
         }
 
 
@@ -42,7 +44,15 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
                 if (R)
                 {
                     await DisplayAlert("ÉXITO", "Proveedor agregado", "OK");
-                    await Navigation.PopAsync();
+                    R = await bitacoraViewModel.AddBitacora(1, "Proveedor", GlobalObjects.GlobalUser.Idusuario);
+                    if (R)
+                    {
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
+                    }
                 }
                 else
                 {
