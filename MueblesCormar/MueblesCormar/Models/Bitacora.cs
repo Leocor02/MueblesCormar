@@ -23,7 +23,7 @@ namespace MueblesCormar.Models
 
         public virtual Usuario IdusuarioNavigation { get; set; } = null!;
 
-        public async Task<bool> InsertarEnBitacora()
+        public async Task<bool> AddBitacora()
         {
             try
             {
@@ -34,8 +34,14 @@ namespace MueblesCormar.Models
 
                 request = new RestRequest(FinalURL, Method.Post);
 
+                //Agregar la info de seguridad del api, en este caso apikey
                 request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
                 request.AddHeader(contentType, mimetype);
+
+                //tenemos que serializar la clase para poderla enviar al api
+                string SerialClass = JsonConvert.SerializeObject(this);
+
+                request.AddBody(SerialClass, mimetype);
 
                 RestResponse response = await client.ExecuteAsync(request);
 
@@ -57,43 +63,43 @@ namespace MueblesCormar.Models
             }
         }
 
-        //public void EjecutarAccion(int tipoAccion, string pNombreTabla, Usuario pUsuario)
-        //{
-        //    string accion = "";
+        public void EjecutarAccion(int tipoAccion, string pNombreTabla, Usuario pUsuario)
+        {
+            string accion = "";
 
-        //    switch (tipoAccion)
-        //    {
-        //        case 1:
-        //            accion = "se insertó en la tabla: " + pNombreTabla;
-        //            break;
-        //        case 2:
-        //            accion = "se modificó en la tabla: " + pNombreTabla;
-        //            break;
-        //        case 3:
-        //            accion = "se eliminó en la tabla: " + pNombreTabla;
-        //            break;
-        //        case 4:
-        //            accion = "se activó un dato en la tabla: " + pNombreTabla;
-        //            break;
-        //    }
+            switch (tipoAccion)
+            {
+                case 1:
+                    accion = "se insertó en la tabla: " + pNombreTabla;
+                    break;
+                case 2:
+                    accion = "se modificó en la tabla: " + pNombreTabla;
+                    break;
+                case 3:
+                    accion = "se eliminó en la tabla: " + pNombreTabla;
+                    break;
+                case 4:
+                    accion = "se activó un dato en la tabla: " + pNombreTabla;
+                    break;
+            }
 
-        //    string usuario = "";
+            string usuario = "";
 
-        //    switch (pUsuario.IdrolUsuario)
-        //    {
-        //        case 1:
-        //            usuario = "Admin";
-        //            break;
-        //        case 2:
-        //            usuario = pUsuario.Nombre;
-        //            break;
+            switch (pUsuario.IdrolUsuario)
+            {
+                case 1:
+                    usuario = "Admin";
+                    break;
+                case 2:
+                    usuario = pUsuario.Nombre;
+                    break;
 
-        //    }
+            }
 
-        //    int idTipoUsuario = pUsuario.IdrolUsuario;
+            int idTipoUsuario = pUsuario.IdrolUsuario;
 
-        //    InsertarEnBitacora(accion, usuario, idTipoUsuario);
-        //}
+            InsertarEnBitacora(accion, usuario, idTipoUsuario);
+        }
 
         public async Task<Bitacora> GetDataBitacora(int idBitacora)
         {
