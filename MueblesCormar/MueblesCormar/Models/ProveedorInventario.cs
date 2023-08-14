@@ -37,9 +37,6 @@ namespace MueblesCormar.Models
                 request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
                 request.AddHeader(contentType, mimetype);
 
-                //var settings = new JsonSerializerSettings();
-                //settings.NullValueHandling = NullValueHandling.Ignore;
-
                 //tenemos que serializar la clase para poderla enviar al api
                 string SerialClass = JsonConvert.SerializeObject(this);
 

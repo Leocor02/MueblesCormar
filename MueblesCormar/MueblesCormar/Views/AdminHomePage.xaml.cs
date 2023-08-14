@@ -57,6 +57,5 @@ namespace MueblesCormar.Views
         {
             await Navigation.PushAsync(new BitacoraManagementPage());
         }
-    
     }
 }
