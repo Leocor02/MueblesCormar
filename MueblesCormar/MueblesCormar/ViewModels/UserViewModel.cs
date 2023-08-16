@@ -224,14 +224,13 @@ namespace MueblesCormar.ViewModels
 
             try
             {
-                MiUsuario.Idusuario = idUsuario;
-                MiUsuario.Nombre = pNombre;
-                MiUsuario.Email = pEmail;
-                //MiUsuario.Contrasennia = "231";
-                MiUsuario.Telefono = pTelefono;
+                MiUsuarioDTO.Idusuario = idUsuario;
+                MiUsuarioDTO.Nombre = pNombre;
+                MiUsuarioDTO.Email = pEmail;
+                //MiUsuarioDTO.Contrasennia = pContrasennia;
+                MiUsuarioDTO.Telefono = pTelefono;
 
-
-                bool R = await MiUsuario.UpdateUsuario(idUsuario);
+                bool R = await MiUsuarioDTO.UpdateUsuario(idUsuario);
 
                 return R;
             }

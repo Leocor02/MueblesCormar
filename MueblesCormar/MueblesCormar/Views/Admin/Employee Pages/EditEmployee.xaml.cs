@@ -36,6 +36,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             TxtEmail.Text = usuariodto.Email;
             //TxtContrasennia.Text = usuariodto.Contrasennia;
             TxtTelefono.Text = usuariodto.Telefono;
+            //TxtIdRol.Text = Convert.ToString(usuariodto.IdrolUsuario);
         }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
                 //TxtContrasennia.Text == null || string.IsNullOrEmpty(TxtContrasennia.Text.Trim()) ||
                 TxtTelefono.Text == null || string.IsNullOrEmpty(TxtTelefono.Text.Trim()))
+                //TxtIdRol.Text == null || string.IsNullOrEmpty(TxtIdRol.Text.Trim()))
             {
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
                 return;
@@ -75,7 +77,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 }
                 else
                 {
-                    await DisplayAlert("ERROR", "Hubo un error al intentar modificar el usuario", "Ok");
+                    await DisplayAlert("Error", "Hubo un error al intentar modificar el usuario", "OK");
                 }
             }
         }
@@ -87,4 +89,5 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
     }
 }
 
-//< Entry x:Name = "TxtContrasennia" Placeholder = "Contraseña" IsPassword = "True" />
+
+            //< Entry x: Name = "TxtContrasennia" Placeholder = "Contraseña" IsPassword = "True" />

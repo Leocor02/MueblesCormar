@@ -66,46 +66,45 @@ namespace MueblesCormar.Models.DTOs
 
 
         //función para actualizar la info de un usuario
-        //public async Task<bool> UpdateUsuario(int idUsuario)
-        //{
-        //    try
-        //    {
-        //        string RouteSufix = string.Format("Usuarios/{0}", idUsuario);
-        //        string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
+        public async Task<bool> UpdateUsuario(int idUsuario)
+        {
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/{0}", idUsuario);
+                string FinalURL = Services.CnnToAPI.ProductionURL + RouteSufix;
 
-        //        RestClient client = new RestClient(FinalURL);
+                RestClient client = new RestClient(FinalURL);
 
-        //        request = new RestRequest(FinalURL, Method.Put);
+                request = new RestRequest(FinalURL, Method.Put);
 
-        //        //Agregar la info de seguridad del api, en este caso apikey
-        //        request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
-        //        request.AddHeader(contentType, mimetype);
+                //Agregar la info de seguridad del api, en este caso apikey
+                request.AddHeader(Services.CnnToAPI.ApiKeyName, Services.CnnToAPI.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
 
-        //        //tenemos que serializar la clase para poderla enviar al api
-        //        string SerialClass = JsonConvert.SerializeObject(this);
+                //tenemos que serializar la clase para poderla enviar al api
+                string SerialClass = JsonConvert.SerializeObject(this);
 
-        //        request.AddBody(SerialClass, mimetype);
+                request.AddBody(SerialClass, mimetype);
 
-        //        RestResponse response = await client.ExecuteAsync(request);
-        //        var responsemensaje = response.ErrorMessage;
+                RestResponse response = await client.ExecuteAsync(request);
 
-        //        HttpStatusCode statusCode = response.StatusCode;
+                HttpStatusCode statusCode = response.StatusCode;
 
-        //        if (statusCode == HttpStatusCode.NoContent)
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            return false;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        string msg = ex.Message;
-        //        throw;
-        //    }
-        //}
+                if (statusCode == HttpStatusCode.NoContent)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+        }
 
         public async Task<UsuarioDTO> GetDataEmpleado(int idUser)
         {

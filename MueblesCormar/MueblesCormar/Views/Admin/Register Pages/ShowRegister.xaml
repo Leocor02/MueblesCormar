@@ -13,19 +13,23 @@
                 FontSize="Title"
                 TextColor="White"/>
 
-                <ListView x:Name="LstRegistro" RowHeight="140" ItemTapped="LstRegistro_ItemTapped">
+                <ListView x:Name="LstRegistro" RowHeight="180" ItemTapped="LstRegistro_ItemTapped">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout>
                                     <StackLayout>
-                                        <Label FontSize="15" Padding="10,0,0,0" Text="Fecha de ingreso" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Fecha de ingreso" TextColor="Green" ></Label>
                                         <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Fecha}" ></Label>
                                     </StackLayout>
                                     <StackLayout>
-                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nota" TextColor="#FFB70101" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="Nota" TextColor="Green" ></Label>
                                         <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Nota}" ></Label>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="ID del usuario" TextColor="Green" ></Label>
+                                        <Label FontSize="15" Padding="10,0,0,0" Text="{Binding Idusuario}" ></Label>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>
