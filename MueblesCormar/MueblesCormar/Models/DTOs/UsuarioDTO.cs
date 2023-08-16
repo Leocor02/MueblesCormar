@@ -21,9 +21,6 @@ namespace MueblesCormar.Models.DTOs
         public string Contrasennia { get; set; } = null!;
         public string Telefono { get; set; } = null!;
         public int IdrolUsuario { get; set; }
-
-
-
         public async Task<UsuarioDTO> GetDataUsuario(string email)
         {
             try

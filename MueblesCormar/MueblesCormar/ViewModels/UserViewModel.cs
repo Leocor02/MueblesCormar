@@ -217,7 +217,8 @@ namespace MueblesCormar.ViewModels
                                               string pNombre, 
                                               string pEmail,
                                               //string pContrasennia,
-                                              string pTelefono)
+                                              string pTelefono,
+                                              int pRolId)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -229,6 +230,7 @@ namespace MueblesCormar.ViewModels
                 MiUsuarioDTO.Email = pEmail;
                 //MiUsuarioDTO.Contrasennia = pContrasennia;
                 MiUsuarioDTO.Telefono = pTelefono;
+                MiUsuarioDTO.IdrolUsuario = pRolId;
 
                 bool R = await MiUsuarioDTO.UpdateUsuario(idUsuario);
 

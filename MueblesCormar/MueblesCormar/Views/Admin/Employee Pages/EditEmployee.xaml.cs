@@ -36,7 +36,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             TxtEmail.Text = usuariodto.Email;
             //TxtContrasennia.Text = usuariodto.Contrasennia;
             TxtTelefono.Text = usuariodto.Telefono;
-            //TxtIdRol.Text = Convert.ToString(usuariodto.IdrolUsuario);
+            TxtIdRol.Text = Convert.ToString(usuariodto.IdrolUsuario);
         }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
@@ -44,10 +44,10 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             if (TxtNombre.Text == null || string.IsNullOrEmpty(TxtNombre.Text.Trim()) ||
                 TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
                 //TxtContrasennia.Text == null || string.IsNullOrEmpty(TxtContrasennia.Text.Trim()) ||
-                TxtTelefono.Text == null || string.IsNullOrEmpty(TxtTelefono.Text.Trim()))
-                //TxtIdRol.Text == null || string.IsNullOrEmpty(TxtIdRol.Text.Trim()))
+                TxtTelefono.Text == null || string.IsNullOrEmpty(TxtTelefono.Text.Trim()) ||
+                TxtIdRol.Text == null || string.IsNullOrEmpty(TxtIdRol.Text.Trim()))
             {
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
+                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "OK");
                 return;
             }
 
@@ -60,7 +60,8 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 TxtNombre.Text.Trim(),
                 TxtEmail.Text.Trim(),
                 //TxtContrasennia.Text.Trim(),
-                TxtTelefono.Text.Trim());
+                TxtTelefono.Text.Trim(),
+                Int32.Parse(TxtIdRol.Text.Trim()));
 
                 if (R)
                 {
@@ -90,4 +91,4 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
 }
 
 
-            //< Entry x: Name = "TxtContrasennia" Placeholder = "Contraseña" IsPassword = "True" />
+  //< Entry x: Name = "TxtContrasennia" Placeholder = "Contraseña" IsPassword = "True" />
