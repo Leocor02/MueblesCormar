@@ -12,6 +12,7 @@
 
             <Entry x:Name="TxtNombre" Placeholder="Nombre"/>
             <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
+            <Entry x:Name ="TxtContrasennia" Placeholder="Contraseña" IsPassword="True" />
             <Entry x:Name="TxtTelefono" Placeholder="Teléfono" Keyboard="Numeric"/>
             <Entry x:Name ="TxtIdRol" Placeholder="ID Rol" Keyboard="Numeric"/>
 
