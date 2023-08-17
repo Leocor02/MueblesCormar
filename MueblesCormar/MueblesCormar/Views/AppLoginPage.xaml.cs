@@ -46,7 +46,6 @@ namespace MueblesCormar.Views
             if (TxtNombreUsuario != null && !string.IsNullOrEmpty(TxtNombreUsuario.Text.Trim()) &&
                 TxtContraseña != null && !string.IsNullOrEmpty(TxtContraseña.Text.Trim()))
             {
-
                 try
                 {
                     string usuario = TxtNombreUsuario.Text.Trim();
