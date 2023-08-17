@@ -75,6 +75,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                     {
                         await DisplayAlert("Error", "Hubo un error al insertar en la bitácora", "OK");
                     }
+
                 }
                 else
                 {
