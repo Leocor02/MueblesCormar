@@ -40,8 +40,8 @@ namespace MueblesCormar.Views
 
         private async void BtnIniciarSesion_Clicked(object sender, EventArgs e)
         {
-           
-            bool R = false; 
+
+            bool R = false;
 
             if (TxtNombreUsuario != null && !string.IsNullOrEmpty(TxtNombreUsuario.Text.Trim()) &&
                 TxtContraseña != null && !string.IsNullOrEmpty(TxtContraseña.Text.Trim()))
