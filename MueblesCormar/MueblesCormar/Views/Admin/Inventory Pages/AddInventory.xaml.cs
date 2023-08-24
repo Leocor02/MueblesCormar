@@ -31,11 +31,11 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                TxtProductoImagen.Text == null || string.IsNullOrEmpty(TxtProductoImagen.Text.Trim()) ||
                TxtPrecio.Text == null || string.IsNullOrEmpty(TxtPrecio.Text.Trim()))
             {
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
+                await DisplayAlert("Error", "Todos los espacios son requeridos", "ok");
                 return;
             }
             //confirmación de la acción a realizar
-            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
+            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este producto?", "Si", "No");
 
             if (answer)
             {
@@ -47,7 +47,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
 
                 if (R)
                 {
-                    await DisplayAlert("ÉXITO", "Producto agregado", "OK");
+                    await DisplayAlert("Éxito", "Producto agregado", "OK");
                     R = await bitacoraViewModel.AddBitacora(1, "Inventario", GlobalObjects.GlobalUser.Idusuario);
                     if (R)
                     {
@@ -60,7 +60,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 }
                 else
                 {
-                    await DisplayAlert("ERROR", "Algo salió mal", "OK");
+                    await DisplayAlert("Error", "Hubo un error al intentar agregar el producto", "OK");
                 }
             }
         }

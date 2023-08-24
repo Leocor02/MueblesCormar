@@ -43,7 +43,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
 
             if (response)
             {
-                await DisplayAlert("ÉXITO", "Empleado eliminado correctamente", "OK");
+                await DisplayAlert("Éxito", "Empleado eliminado correctamente", "OK");
                 bool R = await bitacoraViewModel.AddBitacora(3, "Empleado", GlobalObjects.GlobalUser.Idusuario);
                 if (R)
                 {
@@ -56,7 +56,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
             }
             else
             {
-                await DisplayAlert("ERROR", "Hubo un error al intentar eliminar el empleado", "OK");
+                await DisplayAlert("Error", "Hubo un error al intentar eliminar el empleado", "OK");
             }
         }
 

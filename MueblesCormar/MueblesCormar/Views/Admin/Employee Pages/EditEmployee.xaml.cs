@@ -47,7 +47,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                 TxtTelefono.Text == null || string.IsNullOrEmpty(TxtTelefono.Text.Trim()) ||
                 TxtIdRol.Text == null || string.IsNullOrEmpty(TxtIdRol.Text.Trim()))
             {
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "OK");
+                await DisplayAlert("Error", "Todos los espacios son requeridos", "OK");
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
 
                 if (R)
                 {
-                    await DisplayAlert("ÉXITO", "Usuario modificado correctamente", "Ok");
+                    await DisplayAlert("Éxito", "Usuario modificado correctamente", "Ok");
                     R = await bitacoraViewModel.AddBitacora(2, "Empleado", GlobalObjects.GlobalUser.Idusuario);
                     if (R)
                     {

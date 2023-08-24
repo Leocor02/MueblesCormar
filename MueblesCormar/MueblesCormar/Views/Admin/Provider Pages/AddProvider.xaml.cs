@@ -29,12 +29,12 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
                 TxtDireccion.Text == null || string.IsNullOrEmpty(TxtDireccion.Text.Trim()))
             {
 
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "Ok");
+                await DisplayAlert("Error", "Todos los espacios son requeridos", "Ok");
                 return;
             }
 
             //confirmación de la acción a realizar
-            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
+            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este proveedor?", "Si", "No");
 
             if (answer)
             {
@@ -43,7 +43,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
 
                 if (R)
                 {
-                    await DisplayAlert("ÉXITO", "Proveedor agregado", "OK");
+                    await DisplayAlert("Éxito", "Proveedor agregado", "OK");
                     R = await bitacoraViewModel.AddBitacora(1, "Proveedor", GlobalObjects.GlobalUser.Idusuario);
                     if (R)
                     {
@@ -56,7 +56,7 @@ namespace MueblesCormar.Views.Admin.Porvider_Pages
                 }
                 else
                 {
-                    await DisplayAlert("ERROR", "Algo salió mal", "OK");
+                    await DisplayAlert("Error", "Hubo un error al intentar agregar el proveedor", "OK");
                 }
             }
         }

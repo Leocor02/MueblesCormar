@@ -45,12 +45,12 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                TxtImagenProducto.Text == null || string.IsNullOrEmpty(TxtImagenProducto.Text.Trim()) || 
                TxtPrecio.Text == null || string.IsNullOrEmpty(TxtPrecio.Text.Trim()))
             {
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
+                await DisplayAlert("Error", "Todos los espacios son requeridos", "ok");
                 return;
             }
 
             //confirmación de la acción a realizar
-            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere editar a este producto?", "Si", "No");
+            var answer = await DisplayAlert("Confirmación requerida", "Seguro que quiere editar este producto?", "Si", "No");
 
             if (answer)
             {
@@ -78,7 +78,7 @@ namespace MueblesCormar.Views.Admin.Inventory_Pages
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Hubo un error al intentar agregar el producto", "OK");
+                    await DisplayAlert("Error", "Hubo un error al intentar modificar el producto", "OK");
                 }
             }
         }

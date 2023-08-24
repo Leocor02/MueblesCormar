@@ -61,7 +61,7 @@ namespace MueblesCormar.Views.Admin.Employee_Pages
                     }
                     else
                     {
-                        await DisplayAlert("Error", "Hubo Un error al intentar agregar el empleado", "OK");
+                        await DisplayAlert("Error", "Hubo un error al intentar agregar el empleado", "OK");
                     }
                 }
             

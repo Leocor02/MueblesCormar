@@ -32,12 +32,12 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
                 )
             {
 
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "Ok");
+                await DisplayAlert("Error!", "Todos los espacios son requeridos", "Ok");
                 return;
             }
 
             //confirmación de la acción a realizar
-            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro?", "Si", "No");
+            var answer = await DisplayAlert("Confirmación requerida", "Estas seguro de añadir este proveedor de inventario?", "Si", "No");
 
             if (answer)
             {
@@ -64,7 +64,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
                 }
                 else
                 {
-                    await DisplayAlert("ERROR", "Algo salió mal", "OK");
+                    await DisplayAlert("ERROR", "Hubo un error al intentar agregar el proveedor", "OK");
                 }
             }
         }

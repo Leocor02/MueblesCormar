@@ -43,7 +43,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
                 TxtNombreProveedor.Text == null || string.IsNullOrEmpty(TxtNombreProveedor.Text.Trim()) ||
                 TxtNombreProducto.Text == null || string.IsNullOrEmpty(TxtNombreProducto.Text.Trim()))
             {
-                await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
+                await DisplayAlert("Error!", "Todos los espacios son requeridos", "ok");
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace MueblesCormar.Views.Admin.ProvInven_Pages
 
                 if (R)
                 {
-                    await DisplayAlert("ÉXITO", "Proveedor modificado correctamente", "Ok");
+                    await DisplayAlert("Éxito", "Proveedor modificado correctamente", "Ok");
                     R = await bitacoraViewModel.AddBitacora(2, "Proveedor de inventario", GlobalObjects.GlobalUser.Idusuario);
                     if (R)
                     {

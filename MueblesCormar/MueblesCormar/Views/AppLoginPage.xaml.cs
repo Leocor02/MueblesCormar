@@ -93,7 +93,7 @@ namespace MueblesCormar.Views
             }
             else
             {
-                await DisplayAlert(":(", "Usuario o contraseña incorrecto", "OK");
+                await DisplayAlert("Error", "Usuario o contraseña incorrecto", "OK");
 
             }
         }
